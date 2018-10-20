@@ -3,3 +3,13 @@
 ################################################################################
 
 /.vs/CodeGeneration/v15
+/bin/Debug
+/Debugging
+/Dsl/obj/Debug
+/DslPackage/obj
+/GenerationInBuildProcess/obj/Debug
+/GenerationResult/obj/Debug
+/T4Generator/obj/Debug
+/TestDataCreator/obj/Debug
+*.user
+/RunTimeGenerator/obj/Debug
