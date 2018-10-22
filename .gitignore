@@ -13,3 +13,4 @@
 /TestDataCreator/obj/Debug
 *.user
 /RunTimeGenerator/obj/Debug
+/HostSpecificGeneration/obj/Debug

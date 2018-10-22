@@ -17,10 +17,14 @@ namespace CodeGeneration.TestDataCreator
             using (Transaction t = store.TransactionManager.BeginTransaction("Create test model"))
             {
                 world = new World(store);
-                Animal animal = new Animal(store);
-                animal.Name = "Tiger";
+                Animal animal1 = new Animal(store);
+                animal1.Name = "Tiger";
 
-                world.Animals.Add(animal);
+                Animal animal2 = new Animal(store);
+                animal2.Name = "Lion";
+
+                world.Animals.Add(animal1);
+                world.Animals.Add(animal2);
 
                 t.Commit();
             }
