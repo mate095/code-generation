@@ -12,7 +12,31 @@ namespace CodeGeneration.GenerationResult.CodeDOM
 {
     
     
-    public class Lion
+    public class Buffallo
     {
+        
+        public Buffallo(string name)
+        {
+            Name = names;
+        }
+        
+        // Name of the animal
+        public virtual string Name
+        {
+            get
+            {
+            }
+            set
+            {
+            }
+        }
+        
+        public virtual void NumberOfLegs
+        {
+            get
+            {
+                return 4;
+            }
+        }
     }
 }

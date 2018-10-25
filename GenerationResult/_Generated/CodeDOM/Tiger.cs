@@ -10,9 +10,45 @@
 
 namespace CodeGeneration.GenerationResult.CodeDOM
 {
+    using System.Collections.Generic;
     
     
     public class Tiger
     {
+        
+        private System.Collections.Generic.IEnumerable<int> preyIds = new int[] {
+                2};
+        
+        public Tiger(string name)
+        {
+            Name = names;
+        }
+        
+        // Name of the animal
+        public virtual string Name
+        {
+            get
+            {
+            }
+            set
+            {
+            }
+        }
+        
+        public virtual void NumberOfLegs
+        {
+            get
+            {
+                return 4;
+            }
+        }
+        
+        public virtual void PreyIds
+        {
+            get
+            {
+                return this.preyIds;
+            }
+        }
     }
 }

@@ -44,8 +44,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_Generated\Roslyn\Lion.cs" />
     <Compile Include="_Generated\Roslyn\Tiger.cs" />
-    <Compile Include="_Generated\CodeDOM\Lion.cs" />
-    <Compile Include="_Generated\CodeDOM\Tiger.cs" />
     <Compile Include="_Generated\T4\HostSpecific\Buffallo.cs">
       <DependentUpon>Herbivores.txt4</DependentUpon>
     </Compile>
@@ -54,6 +52,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="_Generated\CodeDOM\" />
     <Folder Include="_Generated\T4\BuildProcess\" />
     <Folder Include="_Generated\T4\RunTime\" />
   </ItemGroup>
