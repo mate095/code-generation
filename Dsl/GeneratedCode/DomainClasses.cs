@@ -288,6 +288,180 @@ namespace CodeGeneration.DSL
 		}
 		
 		#endregion
+		#region NumberOfLegs domain property code
+		
+		/// <summary>
+		/// NumberOfLegs domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NumberOfLegsDomainPropertyId = new global::System.Guid(0xd304c062, 0x881d, 0x4eea, 0x89, 0x57, 0x5f, 0xd4, 0xa6, 0xa9, 0x13, 0xea);
+		
+		/// <summary>
+		/// Storage for NumberOfLegs
+		/// </summary>
+		private global::System.Int32 numberOfLegsPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of NumberOfLegs domain property.
+		/// Description for CodeGeneration.DSL.Animal.Number Of Legs
+		/// </summary>
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.Animal/NumberOfLegs.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.Animal/NumberOfLegs.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d304c062-881d-4eea-8957-5fd4a6a913ea")]
+		public global::System.Int32 NumberOfLegs
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return numberOfLegsPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NumberOfLegsPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Animal.NumberOfLegs domain property.
+		/// </summary>
+		internal sealed partial class NumberOfLegsPropertyHandler : DslModeling::DomainPropertyValueHandler<Animal, global::System.Int32>
+		{
+			private NumberOfLegsPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Animal.NumberOfLegs domain property value handler.
+			/// </summary>
+			public static readonly NumberOfLegsPropertyHandler Instance = new NumberOfLegsPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Animal.NumberOfLegs domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NumberOfLegsDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Int32 GetValue(Animal element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.numberOfLegsPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Animal element, global::System.Int32 newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Int32 oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.numberOfLegsPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region AnimalId domain property code
+		
+		/// <summary>
+		/// AnimalId domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid AnimalIdDomainPropertyId = new global::System.Guid(0x9ed51e67, 0x8f07, 0x479b, 0x90, 0x48, 0x47, 0xd1, 0x33, 0x2e, 0x59, 0xeb);
+		
+		/// <summary>
+		/// Storage for AnimalId
+		/// </summary>
+		private global::System.Int32 animalIdPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of AnimalId domain property.
+		/// Description for CodeGeneration.DSL.Animal.Animal Id
+		/// </summary>
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.Animal/AnimalId.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.Animal/AnimalId.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("9ed51e67-8f07-479b-9048-47d1332e59eb")]
+		public global::System.Int32 AnimalId
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return animalIdPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				AnimalIdPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Animal.AnimalId domain property.
+		/// </summary>
+		internal sealed partial class AnimalIdPropertyHandler : DslModeling::DomainPropertyValueHandler<Animal, global::System.Int32>
+		{
+			private AnimalIdPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Animal.AnimalId domain property value handler.
+			/// </summary>
+			public static readonly AnimalIdPropertyHandler Instance = new AnimalIdPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Animal.AnimalId domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return AnimalIdDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Int32 GetValue(Animal element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.animalIdPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Animal element, global::System.Int32 newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Int32 oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.animalIdPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region World opposite domain role accessor
 		/// <summary>
 		/// Gets or sets World.
@@ -303,6 +477,76 @@ namespace CodeGeneration.DSL
 			set
 			{
 				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::CodeGeneration.DSL.WorldHasAnimals.ElementDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region Predators opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Predators.
+		/// Description for CodeGeneration.DSL.PredatorReferencesPreys.Animal
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Predator> Predators
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Predator>, Predator>(global::CodeGeneration.DSL.PredatorReferencesPreys.AnimalDomainRoleId);
+			}
+		}
+		#endregion
+	}
+}
+namespace CodeGeneration.DSL
+{
+	/// <summary>
+	/// DomainClass Predator
+	/// Description for CodeGeneration.DSL.Predator
+	/// </summary>
+	[DslDesign::DisplayNameResource("CodeGeneration.DSL.Predator.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("CodeGeneration.DSL.Predator.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::CodeGeneration.DSL.DSLDomainModel))]
+	[DslModeling::DomainObjectId("11c73537-714b-4471-b9e4-5ca3fb167d35")]
+	internal partial class Predator : Animal
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Predator domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x11c73537, 0x714b, 0x4471, 0xb9, 0xe4, 0x5c, 0xa3, 0xfb, 0x16, 0x7d, 0x35);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Predator(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Predator(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Preys opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Preys.
+		/// Description for CodeGeneration.DSL.PredatorReferencesPreys.Predator
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Animal> Preys
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Animal>, Animal>(global::CodeGeneration.DSL.PredatorReferencesPreys.PredatorDomainRoleId);
 			}
 		}
 		#endregion

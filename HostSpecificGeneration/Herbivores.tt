@@ -1,0 +1,39 @@
+﻿<#@ template language="C#" hostSpecific="true" debug="true" #>
+<#@ output extension=".txt4" #>
+<#@ include file="TemplateFileManagerV2.1.ttinclude" #>
+<#@ include file="Common\\Imports.ttinclude"#>
+<#
+var creator = new TestDataCreator();
+var world = creator.CreatWorld();
+
+var fileManager = TemplateFileManager.Create(this);
+
+foreach(var animal in world.Herbivores)
+{
+    var fileName = animal.Name + ".cs";
+    fileManager.StartNewFile(fileName, "GenerationResult",  "_Generated\\T4\\HostSpecific");
+#>
+<#@ include file="Common\\HeaderComment.ttinclude"#>
+
+namespace CodeGeneration.GenerationResult.T4.HostSpecific
+{
+    public class <#= animal.Name #>
+    {
+        public <#= animal.Name #>(string name)
+        {
+            Name = name;
+        }
+
+        public string Name {get; set;}
+
+        public int NumberOfLegs => <#= animal.NumberOfLegs #>;
+    }
+}
+<#
+}
+#>
+
+<#
+fileManager.Process();
+WriteLineToBuildPane("Herbiovres.tt generation was successful");
+#>

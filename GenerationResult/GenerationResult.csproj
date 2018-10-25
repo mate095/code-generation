@@ -46,11 +46,11 @@
     <Compile Include="_Generated\Roslyn\Tiger.cs" />
     <Compile Include="_Generated\CodeDOM\Lion.cs" />
     <Compile Include="_Generated\CodeDOM\Tiger.cs" />
-    <Compile Include="_Generated\T4\HostSpecific\Lion.cs">
-      <DependentUpon>Animal.txt4</DependentUpon>
+    <Compile Include="_Generated\T4\HostSpecific\Buffallo.cs">
+      <DependentUpon>Herbivores.txt4</DependentUpon>
     </Compile>
     <Compile Include="_Generated\T4\HostSpecific\Tiger.cs">
-      <DependentUpon>Animal.txt4</DependentUpon>
+      <DependentUpon>Predator.txt4</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -58,7 +58,8 @@
     <Folder Include="_Generated\T4\RunTime\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="_Generated\T4\HostSpecific\Animal.txt4" />
+    <None Include="_Generated\T4\HostSpecific\Herbivores.txt4" />
+    <None Include="_Generated\T4\HostSpecific\Predator.txt4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

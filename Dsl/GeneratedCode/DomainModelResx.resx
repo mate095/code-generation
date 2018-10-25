@@ -149,6 +149,30 @@
     <value>Name</value>
     <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Animal&apos;</comment>
   </data>
+  <data name="CodeGeneration.DSL.Animal/NumberOfLegs.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Animal.Number Of Legs</value>
+    <comment>Description for DomainProperty &apos;NumberOfLegs&apos; on DomainClass &apos;Animal&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.Animal/NumberOfLegs.DisplayName" xml:space="preserve">
+    <value>Number Of Legs</value>
+    <comment>DisplayName for DomainProperty &apos;NumberOfLegs&apos; on DomainClass &apos;Animal&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.Animal/AnimalId.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Animal.Animal Id</value>
+    <comment>Description for DomainProperty &apos;AnimalId&apos; on DomainClass &apos;Animal&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.Animal/AnimalId.DisplayName" xml:space="preserve">
+    <value>Animal Id</value>
+    <comment>DisplayName for DomainProperty &apos;AnimalId&apos; on DomainClass &apos;Animal&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.Predator.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Predator</value>
+    <comment>Description for DomainClass &apos;Predator&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.Predator.DisplayName" xml:space="preserve">
+    <value>Predator</value>
+    <comment>DisplayName for DomainClass &apos;Predator&apos;</comment>
+  </data>
   <data name="CodeGeneration.DSL.WorldHasAnimals.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
     <comment>Description for DomainClass &apos;WorldHasAnimals&apos;</comment>
@@ -180,6 +204,38 @@
   <data name="CodeGeneration.DSL.WorldHasAnimals/Element.PropertyDisplayName" xml:space="preserve">
     <value>World</value>
     <comment>PropertyDisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;WorldHasAnimals&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.PredatorReferencesPreys.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.PredatorReferencesPreys</value>
+    <comment>Description for DomainClass &apos;PredatorReferencesPreys&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.PredatorReferencesPreys.DisplayName" xml:space="preserve">
+    <value>Predator References Preys</value>
+    <comment>DisplayName for DomainClass &apos;PredatorReferencesPreys&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Predator.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.PredatorReferencesPreys.Predator</value>
+    <comment>Description for DomainRole &apos;Predator&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Predator.DisplayName" xml:space="preserve">
+    <value>Predator</value>
+    <comment>DisplayName for DomainRole &apos;Predator&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Predator.PropertyDisplayName" xml:space="preserve">
+    <value>Preys</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Predator&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Animal.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.PredatorReferencesPreys.Animal</value>
+    <comment>Description for DomainRole &apos;Animal&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Animal.DisplayName" xml:space="preserve">
+    <value>Animal</value>
+    <comment>DisplayName for DomainRole &apos;Animal&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Animal.PropertyDisplayName" xml:space="preserve">
+    <value>Predators</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Animal&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
   </data>
   <data name="FormatList" xml:space="preserve">
     <value>DSL (*.model)|*.model</value>

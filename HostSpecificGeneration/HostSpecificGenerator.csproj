@@ -44,19 +44,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Animal.tt">
+    <Content Include="Herbivores.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Animal.txt4</LastGenOutput>
+      <LastGenOutput>Herbivores.txt4</LastGenOutput>
+    </Content>
+    <Content Include="Predator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Predator.txt4</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Animal.txt4">
+    <None Include="Common\HeaderComment.ttinclude" />
+    <None Include="Common\Imports.ttinclude" />
+    <None Include="Herbivores.txt4">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Animal.tt</DependentUpon>
+      <DependentUpon>Herbivores.tt</DependentUpon>
+    </None>
+    <None Include="Predator.txt4">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Predator.tt</DependentUpon>
     </None>
     <None Include="TemplateFileManagerV2.1.ttinclude" />
   </ItemGroup>

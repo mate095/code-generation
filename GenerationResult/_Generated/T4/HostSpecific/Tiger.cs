@@ -9,7 +9,26 @@
 
 namespace CodeGeneration.GenerationResult.T4.HostSpecific
 {
+
+    using System.Collections.Generic;
+
     public class Tiger
     {
+        private IEnumerable<int> preyIds;
+
+        public Tiger(string name)
+        {
+            Name = name;
+        }
+
+        public string Name {get; set;}
+
+        public int NumberOfLegs => 4;
+
+        public IEnumerable<int> PreyIds => preyIds ?? (preyIds = new List<int>
+        {
+           0,
+        });
     }
 }
+

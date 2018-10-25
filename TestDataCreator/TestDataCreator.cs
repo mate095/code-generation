@@ -18,14 +18,20 @@ namespace CodeGeneration.TestDataCreator
             using (Transaction t = store.TransactionManager.BeginTransaction("Create test model"))
             {
                 world = new World(store);
-                Animal animal1 = new Animal(store);
-                animal1.Name = "Tiger";
+                Predator predator = new Predator(store);
+                predator.Name = "Tiger";
+                predator.NumberOfLegs = 4;
+                predator.AnimalId = 1;
 
-                Animal animal2 = new Animal(store);
-                animal2.Name = "Lion";
+                Animal prey = new Animal(store);
+                prey.Name = "Buffallo";
+                prey.NumberOfLegs = 4;
+                prey.AnimalId = 2;
+                
+                predator.Preys.Add(prey);
 
-                world.Animals.Add(animal1);
-                world.Animals.Add(animal2);
+                world.Animals.Add(predator);
+                world.Animals.Add(prey);
 
                 t.Commit();
             }

@@ -69,7 +69,9 @@ namespace CodeGeneration.DSL
 			{
 				typeof(World),
 				typeof(Animal),
+				typeof(Predator),
 				typeof(WorldHasAnimals),
+				typeof(PredatorReferencesPreys),
 				typeof(DSLDiagram),
 			};
 		}
@@ -83,6 +85,8 @@ namespace CodeGeneration.DSL
 			return new DomainMemberInfo[]
 			{
 				new DomainMemberInfo(typeof(Animal), "Name", Animal.NameDomainPropertyId, typeof(Animal.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Animal), "NumberOfLegs", Animal.NumberOfLegsDomainPropertyId, typeof(Animal.NumberOfLegsPropertyHandler)),
+				new DomainMemberInfo(typeof(Animal), "AnimalId", Animal.AnimalIdDomainPropertyId, typeof(Animal.AnimalIdPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -95,6 +99,8 @@ namespace CodeGeneration.DSL
 			{
 				new DomainRolePlayerInfo(typeof(WorldHasAnimals), "World", WorldHasAnimals.WorldDomainRoleId),
 				new DomainRolePlayerInfo(typeof(WorldHasAnimals), "Element", WorldHasAnimals.ElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(PredatorReferencesPreys), "Predator", PredatorReferencesPreys.PredatorDomainRoleId),
+				new DomainRolePlayerInfo(typeof(PredatorReferencesPreys), "Animal", PredatorReferencesPreys.AnimalDomainRoleId),
 			};
 		}
 		#endregion
@@ -116,10 +122,11 @@ namespace CodeGeneration.DSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(3);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(4);
 				createElementMap.Add(typeof(World), 0);
 				createElementMap.Add(typeof(Animal), 1);
-				createElementMap.Add(typeof(DSLDiagram), 2);
+				createElementMap.Add(typeof(Predator), 2);
+				createElementMap.Add(typeof(DSLDiagram), 3);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -135,7 +142,8 @@ namespace CodeGeneration.DSL
 			{
 				case 0: return new World(partition, propertyAssignments);
 				case 1: return new Animal(partition, propertyAssignments);
-				case 2: return new DSLDiagram(partition, propertyAssignments);
+				case 2: return new Predator(partition, propertyAssignments);
+				case 3: return new DSLDiagram(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -158,8 +166,9 @@ namespace CodeGeneration.DSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(1);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
 				createElementLinkMap.Add(typeof(WorldHasAnimals), 0);
+				createElementLinkMap.Add(typeof(PredatorReferencesPreys), 1);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -175,6 +184,7 @@ namespace CodeGeneration.DSL
 			switch (index)
 			{
 				case 0: return new WorldHasAnimals(partition, roleAssignments, propertyAssignments);
+				case 1: return new PredatorReferencesPreys(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}

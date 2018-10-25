@@ -82,6 +82,10 @@
         </xsd:attribute>
         <!-- Property: Name -->
         <xsd:attribute name="name" type="xsd:string" use="required" />
+        <!-- Property: NumberOfLegs -->
+        <xsd:attribute name="numberOfLegs" type="xsd:integer" />
+        <!-- Property: AnimalId -->
+        <xsd:attribute name="animalId" type="xsd:integer" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -99,6 +103,50 @@
             <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Predator -->
+  <xsd:element name="predator" type="Predator" substitutionGroup="animal" />
+  <xsd:complexType name="Predator">
+    <xsd:complexContent>
+      <xsd:extension base="Animal">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: PredatorReferencesPreys -->
+          <xsd:element name="preys" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of PredatorReferencesPreys</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="predatorReferencesPreys" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of PredatorReferencesPreys needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Predator Moniker -->
+  <xsd:element name="predatorMoniker" type="PredatorMoniker" substitutionGroup="animalMoniker" />
+  <xsd:complexType name="PredatorMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Predator instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AnimalMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -134,6 +182,46 @@
   <xsd:complexType name="WorldHasAnimalsMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for WorldHasAnimals instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- PredatorReferencesPreys -->
+  <xsd:element name="predatorReferencesPreys" type="PredatorReferencesPreys" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="PredatorReferencesPreys">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Animal -->
+          <xsd:element ref="animalMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- PredatorReferencesPreys Moniker -->
+  <xsd:element name="predatorReferencesPreysMoniker" type="PredatorReferencesPreysMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="PredatorReferencesPreysMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for PredatorReferencesPreys instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

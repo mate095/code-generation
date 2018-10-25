@@ -246,3 +246,223 @@ namespace CodeGeneration.DSL
 		#endregion
 	}
 }
+namespace CodeGeneration.DSL
+{
+	/// <summary>
+	/// DomainRelationship PredatorReferencesPreys
+	/// Description for CodeGeneration.DSL.PredatorReferencesPreys
+	/// </summary>
+	[DslDesign::DisplayNameResource("CodeGeneration.DSL.PredatorReferencesPreys.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("CodeGeneration.DSL.PredatorReferencesPreys.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::CodeGeneration.DSL.DSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("7bfc7180-5767-4707-b842-e622fc9eb5e6")]
+	public partial class PredatorReferencesPreys : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// PredatorReferencesPreys domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7bfc7180, 0x5767, 0x4707, 0xb8, 0x42, 0xe6, 0x22, 0xfc, 0x9e, 0xb5, 0xe6);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a PredatorReferencesPreys link in the same Partition as the given Predator
+		/// </summary>
+		/// <param name="source">Predator to use as the source of the relationship.</param>
+		/// <param name="target">Animal to use as the target of the relationship.</param>
+		internal PredatorReferencesPreys(Predator source, Animal target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(PredatorReferencesPreys.PredatorDomainRoleId, source), new DslModeling::RoleAssignment(PredatorReferencesPreys.AnimalDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public PredatorReferencesPreys(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public PredatorReferencesPreys(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public PredatorReferencesPreys(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public PredatorReferencesPreys(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Predator domain role code
+		
+		/// <summary>
+		/// Predator domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid PredatorDomainRoleId = new global::System.Guid(0x7650b19c, 0x41eb, 0x4365, 0x97, 0xa4, 0xc2, 0x34, 0xa5, 0x18, 0x4b, 0x0d);
+		
+		/// <summary>
+		/// DomainRole Predator
+		/// Description for CodeGeneration.DSL.PredatorReferencesPreys.Predator
+		/// </summary>
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.PredatorReferencesPreys/Predator.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.PredatorReferencesPreys/Predator.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Preys", PropertyDisplayNameKey="CodeGeneration.DSL.PredatorReferencesPreys/Predator.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("7650b19c-41eb-4365-97a4-c234a5184b0d")]
+		internal virtual Predator Predator
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Predator)DslModeling::DomainRoleInfo.GetRolePlayer(this, PredatorDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, PredatorDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Predators of a Animal
+		/// <summary>
+		/// Gets a list of Predators.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static DslModeling::LinkedElementCollection<Predator> GetPredators(Animal element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Predator>, Predator>(element, AnimalDomainRoleId);
+		}
+		#endregion
+		#region Animal domain role code
+		
+		/// <summary>
+		/// Animal domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid AnimalDomainRoleId = new global::System.Guid(0x12f126b0, 0x65c1, 0x45f5, 0xa8, 0x31, 0x7a, 0x7c, 0x0f, 0x8c, 0x38, 0xe1);
+		
+		/// <summary>
+		/// DomainRole Animal
+		/// Description for CodeGeneration.DSL.PredatorReferencesPreys.Animal
+		/// </summary>
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.PredatorReferencesPreys/Animal.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.PredatorReferencesPreys/Animal.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Predators", PropertyDisplayNameKey="CodeGeneration.DSL.PredatorReferencesPreys/Animal.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("12f126b0-65c1-45f5-a831-7a7c0f8c38e1")]
+		internal virtual Animal Animal
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Animal)DslModeling::DomainRoleInfo.GetRolePlayer(this, AnimalDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, AnimalDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Preys of a Predator
+		/// <summary>
+		/// Gets a list of Preys.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static DslModeling::LinkedElementCollection<Animal> GetPreys(Predator element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Animal>, Animal>(element, PredatorDomainRoleId);
+		}
+		#endregion
+		#region Predator link accessor
+		/// <summary>
+		/// Get the list of PredatorReferencesPreys links to a Predator.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.PredatorReferencesPreys> GetLinksToPreys ( global::CodeGeneration.DSL.Predator predatorInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.PredatorReferencesPreys>(predatorInstance, global::CodeGeneration.DSL.PredatorReferencesPreys.PredatorDomainRoleId);
+		}
+		#endregion
+		#region Animal link accessor
+		/// <summary>
+		/// Get the list of PredatorReferencesPreys links to a Animal.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.PredatorReferencesPreys> GetLinksToPredators ( global::CodeGeneration.DSL.Animal animalInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.PredatorReferencesPreys>(animalInstance, global::CodeGeneration.DSL.PredatorReferencesPreys.AnimalDomainRoleId);
+		}
+		#endregion
+		#region PredatorReferencesPreys instance accessors
+		
+		/// <summary>
+		/// Get any PredatorReferencesPreys links between a given Predator and a Animal.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.PredatorReferencesPreys> GetLinks( global::CodeGeneration.DSL.Predator source, global::CodeGeneration.DSL.Animal target )
+		{
+			global::System.Collections.Generic.List<global::CodeGeneration.DSL.PredatorReferencesPreys> outLinks = new global::System.Collections.Generic.List<global::CodeGeneration.DSL.PredatorReferencesPreys>();
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.PredatorReferencesPreys> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.PredatorReferencesPreys>(source, global::CodeGeneration.DSL.PredatorReferencesPreys.PredatorDomainRoleId);
+			foreach ( global::CodeGeneration.DSL.PredatorReferencesPreys link in links )
+			{
+				if ( target.Equals(link.Animal) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one PredatorReferencesPreys link between a given Predatorand a Animal.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static global::CodeGeneration.DSL.PredatorReferencesPreys GetLink( global::CodeGeneration.DSL.Predator source, global::CodeGeneration.DSL.Animal target )
+		{
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.PredatorReferencesPreys> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.PredatorReferencesPreys>(source, global::CodeGeneration.DSL.PredatorReferencesPreys.PredatorDomainRoleId);
+			foreach ( global::CodeGeneration.DSL.PredatorReferencesPreys link in links )
+			{
+				if ( target.Equals(link.Animal) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

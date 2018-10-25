@@ -21,7 +21,22 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="d304c062-881d-4eea-8957-5fd4a6a913ea" Description="Description for CodeGeneration.DSL.Animal.Number Of Legs" Name="NumberOfLegs" DisplayName="Number Of Legs">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Int32" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="9ed51e67-8f07-479b-9048-47d1332e59eb" Description="Description for CodeGeneration.DSL.Animal.Animal Id" Name="AnimalId" DisplayName="Animal Id">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Int32" />
+          </Type>
+        </DomainProperty>
       </Properties>
+    </DomainClass>
+    <DomainClass Id="11c73537-714b-4471-b9e4-5ca3fb167d35" Description="Description for CodeGeneration.DSL.Predator" Name="Predator" DisplayName="Predator" AccessModifier="Assembly" Namespace="CodeGeneration.DSL">
+      <BaseClass>
+        <DomainClassMoniker Name="Animal" />
+      </BaseClass>
     </DomainClass>
   </Classes>
   <Relationships>
@@ -35,6 +50,22 @@
       </Source>
       <Target>
         <DomainRole Id="3224416b-0762-4a1a-99a1-e8a28c02b46c" Description="" Name="Element" DisplayName="Element" PropertyName="World" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="World">
+          <RolePlayer>
+            <DomainClassMoniker Name="Animal" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="7bfc7180-5767-4707-b842-e622fc9eb5e6" Description="Description for CodeGeneration.DSL.PredatorReferencesPreys" Name="PredatorReferencesPreys" DisplayName="Predator References Preys" Namespace="CodeGeneration.DSL">
+      <Source>
+        <DomainRole Id="7650b19c-41eb-4365-97a4-c234a5184b0d" Description="Description for CodeGeneration.DSL.PredatorReferencesPreys.Predator" Name="Predator" DisplayName="Predator" PropertyName="Preys" PropertyDisplayName="Preys">
+          <RolePlayer>
+            <DomainClassMoniker Name="Predator" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="12f126b0-65c1-45f5-a831-7a7c0f8c38e1" Description="Description for CodeGeneration.DSL.PredatorReferencesPreys.Animal" Name="Animal" DisplayName="Animal" PropertyName="Predators" PropertyDisplayName="Predators">
           <RolePlayer>
             <DomainClassMoniker Name="Animal" />
           </RolePlayer>
@@ -75,6 +106,12 @@
           <XmlPropertyData XmlName="name" IsMonikerKey="true">
             <DomainPropertyMoniker Name="Animal/Name" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="numberOfLegs">
+            <DomainPropertyMoniker Name="Animal/NumberOfLegs" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="animalId">
+            <DomainPropertyMoniker Name="Animal/AnimalId" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="WorldHasAnimals" MonikerAttributeName="" SerializeId="true" MonikerElementName="worldHasAnimalsMoniker" ElementName="worldHasAnimals" MonikerTypeName="WorldHasAnimalsMoniker">
@@ -83,9 +120,41 @@
       <XmlClassData TypeName="DSLDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="dSLDiagramMoniker" ElementName="dSLDiagram" MonikerTypeName="DSLDiagramMoniker">
         <DiagramMoniker Name="DSLDiagram" />
       </XmlClassData>
+      <XmlClassData TypeName="Predator" MonikerAttributeName="" SerializeId="true" MonikerElementName="predatorMoniker" ElementName="predator" MonikerTypeName="PredatorMoniker">
+        <DomainClassMoniker Name="Predator" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="preys">
+            <DomainRelationshipMoniker Name="PredatorReferencesPreys" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="PredatorReferencesPreys" MonikerAttributeName="" SerializeId="true" MonikerElementName="predatorReferencesPreysMoniker" ElementName="predatorReferencesPreys" MonikerTypeName="PredatorReferencesPreysMoniker">
+        <DomainRelationshipMoniker Name="PredatorReferencesPreys" />
+      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="DSLExplorer" />
+  <ConnectionBuilders>
+    <ConnectionBuilder Name="PredatorReferencesPreysBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="PredatorReferencesPreys" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Predator" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="Animal" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+  </ConnectionBuilders>
   <Diagram Id="4709a42c-6ff6-4595-9ea1-c18913b762f9" Description="Description for CodeGeneration.DSL.DSLDiagram" Name="DSLDiagram" DisplayName="Minimal Language Diagram" Namespace="CodeGeneration.DSL">
     <Class>
       <DomainClassMoniker Name="World" />
