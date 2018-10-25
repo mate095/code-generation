@@ -7,6 +7,7 @@
     using Microsoft.CodeAnalysis.MSBuild;
     using System;
     using CodeGeneration.DSL;
+    using Microsoft.CodeAnalysis.Editing;
 
     public class AnimalGenerator
     {
@@ -29,17 +30,14 @@
             // Add the class to the namespace.
             @namespace = @namespace.AddMembers(classDeclaration);
 
-            // Normalize and get code as string.
-            var code = @namespace
-                .NormalizeWhitespace()
-                .ToFullString();
+            
 
             var fileName = $"{animal.Name}.cs";
 
-            CreateCodeFileAsync(code, fileName);
+            CreateCodeFile(@namespace, fileName);
         }
 
-        public void CreateCodeFileAsync(string code, string fileName)
+        public void CreateCodeFile(SyntaxNode @newSyntaxNode, string fileName)
         {
             using (var workspace = MSBuildWorkspace.Create())
             {
@@ -47,15 +45,39 @@
                 var solution = workspace.OpenSolutionAsync("..\\..\\CodeGeneration.sln").Result;
                 var project = solution.Projects.Single(x => x.Name == "GenerationResult");
 
-                var sourceText = SourceText.From(code);
-
-                var folders = new string[] {"_Generated", "Roslyn" };
+                var filePath = GetFilePath(project.FilePath, fileName);
+                var document = project.Documents.SingleOrDefault(x => x.FilePath == filePath);
                 
-                var document = project.AddDocument(fileName, sourceText, folders, project.FilePath);
 
-                var result = workspace.TryApplyChanges(document.Project.Solution);
+                if(document != null)
+                {
+                    var documentEditor = DocumentEditor.CreateAsync(document).Result;
+                    var @oldSyntaxNode = document.GetSyntaxRootAsync().Result;
+                    documentEditor.ReplaceNode(@oldSyntaxNode, @newSyntaxNode.NormalizeWhitespace());
+                    var modifiedDocument = documentEditor.GetChangedDocument();
+                    workspace.TryApplyChanges(modifiedDocument.Project.Solution);
+                }
+                else
+                {
+                    // Normalize and get code as string.
+                    var code = @newSyntaxNode.NormalizeWhitespace().ToFullString();
+                    var sourceText = SourceText.From(code);
 
+                    var folders = new string[] { "_Generated", "Roslyn" };
+
+                    var newDocument = project.AddDocument(fileName, sourceText, folders, project.FilePath);
+                    workspace.TryApplyChanges(newDocument.Project.Solution);
+                }
             }
+        }
+
+        private string GetFilePath(string projectFielPath, string fileName)
+        {
+            var items = projectFielPath.Split('\\');
+            var projectFiel = items.Last();
+            projectFielPath = projectFielPath.Remove(projectFielPath.Length - projectFiel.Length, projectFiel.Length);
+
+            return $"{projectFielPath}_Generated\\Roslyn\\{fileName}";
         }
     }
 }
