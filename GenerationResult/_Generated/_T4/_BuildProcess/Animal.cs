@@ -12,4 +12,7 @@ namespace CodeGeneration.GenerationResult
     public class Tiger
     {
     }
+    public class Lion
+    {
+    }
 }

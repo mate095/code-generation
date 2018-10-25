@@ -1,12 +1,13 @@
 ﻿using CodeGeneration.DSL;
 using Microsoft.VisualStudio.Modeling;
+using System;
 
 namespace CodeGeneration.TestDataCreator
 {
     /// <summary>
     /// Class for creat test data for code generation
     /// </summary>
-    public class TestDataCreator
+    public class TestDataCreator : IDisposable
     {
         Store store;
 
@@ -30,6 +31,11 @@ namespace CodeGeneration.TestDataCreator
             }
 
             return world;
+        }
+
+        public void Dispose()
+        {
+            store.Dispose();
         }
     }
 }
