@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CodeGeneration.CodeDOMGenerator
+namespace CodeGeneration.GenerationResult.CodeDOM
 {
     
     
-    public class Lion
+    public class Tiger
     {
     }
 }

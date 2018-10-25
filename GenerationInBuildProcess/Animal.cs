@@ -7,9 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CodeGeneration.GenerationResult
+namespace CodeGeneration.GenerationResult.T4.BuildProcess
 {
     public class Tiger
+    {
+    }
+    public class Lion
     {
     }
 }

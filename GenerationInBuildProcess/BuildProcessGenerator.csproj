@@ -51,7 +51,7 @@
   <ItemGroup>
     <None Include="Animal.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <OutputFilePath>$(SolutionDir)\GenerationResult\_Generated\_T4\_BuildProcess</OutputFilePath>
+      <OutputFilePath>$(SolutionDir)\GenerationResult\_Generated\T4\BuildProcess</OutputFilePath>
       <OutputFileName>Animal.cs</OutputFileName>
       <LastGenOutput>Animal.cs</LastGenOutput>
     </None>

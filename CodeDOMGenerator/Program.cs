@@ -13,7 +13,7 @@ namespace CodeGeneration.CodeDOMGenerator
             foreach(var animal in world.Animals)
             {
                 AnimalGenerator generator = new AnimalGenerator(animal, new CodeCompileUnit());
-                string outputPath = $"..\\..\\GenerationResult\\_Generated\\_CodeDOM\\{animal.Name}.cs";
+                string outputPath = $"..\\..\\GenerationResult\\_Generated\\CodeDOM\\{animal.Name}.cs";
                 generator.GenerateCSharpCode(outputPath);
             }
         }

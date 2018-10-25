@@ -44,22 +44,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_Generated\Roslyn\Lion.cs" />
     <Compile Include="_Generated\Roslyn\Tiger.cs" />
-    <Compile Include="_Generated\_CodeDOM\Lion.cs" />
-    <Compile Include="_Generated\_CodeDOM\Tiger.cs" />
-    <Compile Include="_Generated\_T4\_HostSpecific\Lion.cs">
+    <Compile Include="_Generated\CodeDOM\Lion.cs" />
+    <Compile Include="_Generated\CodeDOM\Tiger.cs" />
+    <Compile Include="_Generated\T4\HostSpecific\Lion.cs">
       <DependentUpon>Animal.txt4</DependentUpon>
     </Compile>
-    <Compile Include="_Generated\_T4\_HostSpecific\Tiger.cs">
+    <Compile Include="_Generated\T4\HostSpecific\Tiger.cs">
       <DependentUpon>Animal.txt4</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="_Generated\Roslyn\" />
-    <Folder Include="_Generated\_T4\_BuildProcess\" />
-    <Folder Include="_Generated\_T4\_RunTime\" />
+    <Folder Include="_Generated\T4\BuildProcess\" />
+    <Folder Include="_Generated\T4\RunTime\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="_Generated\_T4\_HostSpecific\Animal.txt4" />
+    <None Include="_Generated\T4\HostSpecific\Animal.txt4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

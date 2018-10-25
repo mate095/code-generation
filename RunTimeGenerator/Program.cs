@@ -6,7 +6,7 @@ namespace RunTimeGenerator
     {
         static void Main(string[] args)
         {
-            string path = "..\\..\\GenerationResult\\_Generated\\_T4\\_RunTime";
+            string path = "..\\..\\GenerationResult\\_Generated\\T4\\RunTime";
             Animal animal = new Animal();
             string animalContent = animal.TransformText();
             File.WriteAllText(Path.Combine(path, "Animal.cs"), animalContent);

@@ -7,12 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CodeGeneration.GenerationResult
+namespace CodeGeneration.GenerationResult.T4.HostSpecific
 {
     public class Tiger
-    {
-    }
-    public class Lion
     {
     }
 }

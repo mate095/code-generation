@@ -44,7 +44,7 @@ var world = creator.CreatWorld();
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace CodeGeneration.BasicT4Generator
+namespace CodeGeneration.GenerationResult.T4.RunTime
 {
 ");
             

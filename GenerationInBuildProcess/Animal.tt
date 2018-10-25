@@ -18,7 +18,7 @@ var world = creator.CreatWorld();
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CodeGeneration.GenerationResult
+namespace CodeGeneration.GenerationResult.T4.BuildProcess
 {
 <#
 foreach(var animal in world.Animals)

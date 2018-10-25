@@ -50,7 +50,7 @@
         private void InitClass()
         {
             targetClass = new CodeTypeDeclaration(animal.Name);
-            CodeNamespace codeNamespace = new CodeNamespace("CodeGeneration.CodeDOMGenerator");
+            CodeNamespace codeNamespace = new CodeNamespace("CodeGeneration.GenerationResult.CodeDOM");
             codeNamespace.Types.Add(targetClass);
             targetUnit.Namespaces.Add(codeNamespace);
         }

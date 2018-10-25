@@ -6,9 +6,12 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace CodeGeneration.RuntimeGenerator
+namespace CodeGeneration.GenerationResult.BasicTemplate
 {
     public class Tiger
+    {
+    }
+    public class Lion
     {
     }
 }
