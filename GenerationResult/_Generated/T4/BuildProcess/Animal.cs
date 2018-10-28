@@ -12,7 +12,7 @@ namespace CodeGeneration.GenerationResult.T4.BuildProcess
     public class Tiger
     {
     }
-    public class Lion
+    public class Buffallo
     {
     }
 }

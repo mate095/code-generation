@@ -27,7 +27,7 @@ namespace CodeGeneration.GenerationResult.T4.HostSpecific
 
         public IEnumerable<int> PreyIds => preyIds ?? (preyIds = new List<int>
         {
-           0,
+           2,
         });
     }
 }

@@ -10,11 +10,12 @@ namespace CodeGeneratin.RoslynGenerator
 
             var creator = new TestDataCreator();
             var world = creator.CreatWorld();
-            AnimalGenerator generator = new AnimalGenerator();
+            
 
             foreach(var animal in world.Animals)
             {
-                generator.CreateAnimal(animal);
+                AnimalGenerator generator = new AnimalGenerator(animal);
+                generator.CreateAnimal();
             }
             
             // Wait to exit.

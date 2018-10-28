@@ -1,11 +1,8 @@
 ﻿namespace CodeGeneration.GenerationResult.Roslyn
 {
-    using System.Collections.Generic;
-
-    public class Tiger
+    public class Buffallo
     {
-        private IEnumerable<int> preyIds;
-        public Tiger(string name)
+        public Buffallo(string name)
         {
             Name = name;
         }
@@ -17,6 +14,5 @@
         }
 
         public int NumberOfLegs => 4;
-        public IEnumerable<int> Preys => preyIds ?? (preyIds = new List<int>{2});
     }
 }
