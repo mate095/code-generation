@@ -67,11 +67,12 @@ namespace CodeGeneration.DSL
 		{
 			return new global::System.Type[]
 			{
-				typeof(World),
-				typeof(Animal),
-				typeof(Predator),
-				typeof(WorldHasAnimals),
-				typeof(PredatorReferencesPreys),
+				typeof(MetaModel),
+				typeof(Class),
+				typeof(Property),
+				typeof(MetaModelHasClasses),
+				typeof(ClassHasProperties),
+				typeof(ClassReferencesDerivedClasses),
 				typeof(DSLDiagram),
 			};
 		}
@@ -84,9 +85,11 @@ namespace CodeGeneration.DSL
 		{
 			return new DomainMemberInfo[]
 			{
-				new DomainMemberInfo(typeof(Animal), "Name", Animal.NameDomainPropertyId, typeof(Animal.NamePropertyHandler)),
-				new DomainMemberInfo(typeof(Animal), "NumberOfLegs", Animal.NumberOfLegsDomainPropertyId, typeof(Animal.NumberOfLegsPropertyHandler)),
-				new DomainMemberInfo(typeof(Animal), "AnimalId", Animal.AnimalIdDomainPropertyId, typeof(Animal.AnimalIdPropertyHandler)),
+				new DomainMemberInfo(typeof(Class), "Name", Class.NameDomainPropertyId, typeof(Class.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Property), "Name", Property.NameDomainPropertyId, typeof(Property.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Property), "Type", Property.TypeDomainPropertyId, typeof(Property.TypePropertyHandler)),
+				new DomainMemberInfo(typeof(Property), "IsReadOnly", Property.IsReadOnlyDomainPropertyId, typeof(Property.IsReadOnlyPropertyHandler)),
+				new DomainMemberInfo(typeof(Property), "DefaultValue", Property.DefaultValueDomainPropertyId, typeof(Property.DefaultValuePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -97,10 +100,12 @@ namespace CodeGeneration.DSL
 		{
 			return new DomainRolePlayerInfo[]
 			{
-				new DomainRolePlayerInfo(typeof(WorldHasAnimals), "World", WorldHasAnimals.WorldDomainRoleId),
-				new DomainRolePlayerInfo(typeof(WorldHasAnimals), "Element", WorldHasAnimals.ElementDomainRoleId),
-				new DomainRolePlayerInfo(typeof(PredatorReferencesPreys), "Predator", PredatorReferencesPreys.PredatorDomainRoleId),
-				new DomainRolePlayerInfo(typeof(PredatorReferencesPreys), "Animal", PredatorReferencesPreys.AnimalDomainRoleId),
+				new DomainRolePlayerInfo(typeof(MetaModelHasClasses), "MetaModel", MetaModelHasClasses.MetaModelDomainRoleId),
+				new DomainRolePlayerInfo(typeof(MetaModelHasClasses), "Element", MetaModelHasClasses.ElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClassHasProperties), "Class", ClassHasProperties.ClassDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClassHasProperties), "Property", ClassHasProperties.PropertyDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClassReferencesDerivedClasses), "SourceClass", ClassReferencesDerivedClasses.SourceClassDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ClassReferencesDerivedClasses), "TargetClass", ClassReferencesDerivedClasses.TargetClassDomainRoleId),
 			};
 		}
 		#endregion
@@ -123,9 +128,9 @@ namespace CodeGeneration.DSL
 			if (createElementMap == null)
 			{
 				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(4);
-				createElementMap.Add(typeof(World), 0);
-				createElementMap.Add(typeof(Animal), 1);
-				createElementMap.Add(typeof(Predator), 2);
+				createElementMap.Add(typeof(MetaModel), 0);
+				createElementMap.Add(typeof(Class), 1);
+				createElementMap.Add(typeof(Property), 2);
 				createElementMap.Add(typeof(DSLDiagram), 3);
 			}
 			int index;
@@ -140,9 +145,9 @@ namespace CodeGeneration.DSL
 			}
 			switch (index)
 			{
-				case 0: return new World(partition, propertyAssignments);
-				case 1: return new Animal(partition, propertyAssignments);
-				case 2: return new Predator(partition, propertyAssignments);
+				case 0: return new MetaModel(partition, propertyAssignments);
+				case 1: return new Class(partition, propertyAssignments);
+				case 2: return new Property(partition, propertyAssignments);
 				case 3: return new DSLDiagram(partition, propertyAssignments);
 				default: return null;
 			}
@@ -166,9 +171,10 @@ namespace CodeGeneration.DSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
-				createElementLinkMap.Add(typeof(WorldHasAnimals), 0);
-				createElementLinkMap.Add(typeof(PredatorReferencesPreys), 1);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(3);
+				createElementLinkMap.Add(typeof(MetaModelHasClasses), 0);
+				createElementLinkMap.Add(typeof(ClassHasProperties), 1);
+				createElementLinkMap.Add(typeof(ClassReferencesDerivedClasses), 2);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -183,8 +189,9 @@ namespace CodeGeneration.DSL
 			}
 			switch (index)
 			{
-				case 0: return new WorldHasAnimals(partition, roleAssignments, propertyAssignments);
-				case 1: return new PredatorReferencesPreys(partition, roleAssignments, propertyAssignments);
+				case 0: return new MetaModelHasClasses(partition, roleAssignments, propertyAssignments);
+				case 1: return new ClassHasProperties(partition, roleAssignments, propertyAssignments);
+				case 2: return new ClassReferencesDerivedClasses(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -347,7 +354,8 @@ namespace CodeGeneration.DSL
 		public DSLDeleteClosureBase()
 		{
 			#region Initialize DomainData Table
-			DomainRoles.Add(global::CodeGeneration.DSL.WorldHasAnimals.ElementDomainRoleId, true);
+			DomainRoles.Add(global::CodeGeneration.DSL.MetaModelHasClasses.ElementDomainRoleId, true);
+			DomainRoles.Add(global::CodeGeneration.DSL.ClassHasProperties.PropertyDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

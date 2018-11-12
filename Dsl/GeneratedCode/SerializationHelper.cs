@@ -309,10 +309,10 @@ namespace CodeGeneration.DSL
 	{
 	
 		/// <summary>
-		/// Loads a World instance into the default partition of the given store, and ignore serialization result.
+		/// Loads a MetaModel instance into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new World instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the World instance will be deserialized.</param>
+		/// <param name="store">The new MetaModel instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the MetaModel instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -324,8 +324,8 @@ namespace CodeGeneration.DSL
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded World instance.</returns>
-		internal virtual World LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded MetaModel instance.</returns>
+		internal virtual MetaModel LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -336,11 +336,11 @@ namespace CodeGeneration.DSL
 		}
 		
 		/// <summary>
-		/// Loads a World instance into the default partition of the given store.
+		/// Loads a MetaModel instance into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new World instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the World instance will be deserialized.</param>
+		/// <param name="store">The new MetaModel instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the MetaModel instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -352,8 +352,8 @@ namespace CodeGeneration.DSL
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded World instance.</returns>
-		internal virtual World LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded MetaModel instance.</returns>
+		internal virtual MetaModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -364,11 +364,11 @@ namespace CodeGeneration.DSL
 		}
 	
 		/// <summary>
-		/// Loads a World instance.
+		/// Loads a MetaModel instance.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new World instance will be created.</param>
-		/// <param name="fileName">Name of the file from which the World instance will be deserialized.</param>
+		/// <param name="partition">Partition in which the new MetaModel instance will be created.</param>
+		/// <param name="fileName">Name of the file from which the MetaModel instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -380,9 +380,9 @@ namespace CodeGeneration.DSL
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded World instance.</returns>
+		/// <returns>The loaded MetaModel instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		internal virtual World LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		internal virtual MetaModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (string.IsNullOrEmpty(fileName))
@@ -396,11 +396,11 @@ namespace CodeGeneration.DSL
 		}
 	
 		/// <summary>
-		/// Loads a World instance from a stream.
+		/// Loads a MetaModel instance from a stream.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new World instance will be created.</param>
-		/// <param name="location">Source location associated with stream from which the World instance is to be loaded. Usually a file path, but can be any string, including null.</param>
+		/// <param name="partition">Partition in which the new MetaModel instance will be created.</param>
+		/// <param name="location">Source location associated with stream from which the MetaModel instance is to be loaded. Usually a file path, but can be any string, including null.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -412,10 +412,10 @@ namespace CodeGeneration.DSL
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <param name="stream">The Stream from which the World will be deserialized.</param>
-		/// <returns>The loaded World instance.</returns>
+		/// <param name="stream">The Stream from which the MetaModel will be deserialized.</param>
+		/// <returns>The loaded MetaModel instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		internal virtual World LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
+		internal virtual MetaModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -432,10 +432,10 @@ namespace CodeGeneration.DSL
 				throw new global::System.InvalidOperationException(DSLDomainModel.SingletonResourceManager.GetString("MissingTransaction"));
 			}
 			
-			World modelRoot = null;
+			MetaModel modelRoot = null;
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(partition.Store);
-			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(World.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for World!");
+			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(MetaModel.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for MetaModel!");
 			if (modelRootSerializer != null)
 			{
 				DslModeling::SerializationContext serializationContext = new DslModeling::SerializationContext(directory, location, serializationResult);
@@ -466,7 +466,7 @@ namespace CodeGeneration.DSL
 								
 								reader.MoveToContent();
 									
-								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as World;
+								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as MetaModel;
 								if (modelRoot != null && !serializationResult.Failed)
 								{
 									this.ReadRootElement(serializationContext, modelRoot, reader, schemaResolver);
@@ -535,9 +535,9 @@ namespace CodeGeneration.DSL
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">World instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the World instance will be saved.</param>
-		internal virtual void SaveModel(DslModeling::SerializationResult serializationResult, World modelRoot, string fileName)
+		/// <param name="modelRoot">MetaModel instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the MetaModel instance will be saved.</param>
+		internal virtual void SaveModel(DslModeling::SerializationResult serializationResult, MetaModel modelRoot, string fileName)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -546,10 +546,10 @@ namespace CodeGeneration.DSL
 		/// Saves the given model to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">World instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the World instance will be saved.</param>
+		/// <param name="modelRoot">MetaModel instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the MetaModel instance will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		internal virtual void SaveModel(DslModeling::SerializationResult serializationResult, World modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
+		internal virtual void SaveModel(DslModeling::SerializationResult serializationResult, MetaModel modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
@@ -558,12 +558,12 @@ namespace CodeGeneration.DSL
 		/// Saves the given model root to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">World instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the World instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the World instance.</param>
+		/// <param name="modelRoot">MetaModel instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the MetaModel instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the MetaModel instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal virtual void SaveModel(DslModeling::SerializationResult serializationResult, World modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal virtual void SaveModel(DslModeling::SerializationResult serializationResult, MetaModel modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -598,13 +598,13 @@ namespace CodeGeneration.DSL
 		/// both can be saved without error before writing the content to disk, so we serialize the model into a in-memory stream first.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">World instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the World instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the World instance.</param>
+		/// <param name="modelRoot">MetaModel instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the MetaModel instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the MetaModel instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		/// <returns>In-memory stream containing the serialized World instance.</returns>
+		/// <returns>In-memory stream containing the serialized MetaModel instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, World modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, MetaModel modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			global::System.Diagnostics.Debug.Assert(serializationResult != null);
@@ -670,19 +670,19 @@ namespace CodeGeneration.DSL
 		}
 	
 		/// <summary>
-		/// Helper method to create and initialize a new World.
+		/// Helper method to create and initialize a new MetaModel.
 		/// </summary>
-		internal virtual World CreateModelHelper(DslModeling::Partition modelPartition)
+		internal virtual MetaModel CreateModelHelper(DslModeling::Partition modelPartition)
 		{
-			World model = new World(modelPartition);
+			MetaModel model = new MetaModel(modelPartition);
 			return model;
 		}
 		
 		/// <summary>
-		/// Loads a World instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
+		/// Loads a MetaModel instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new World instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the World instance will be deserialized.</param>
+		/// <param name="store">The new MetaModel instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the MetaModel instance will be deserialized.</param>
 		/// <param name="diagramFileName">Name of the file from which the DSLDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
@@ -695,18 +695,18 @@ namespace CodeGeneration.DSL
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded World instance.</returns>
-		internal virtual World LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded MetaModel instance.</returns>
+		internal virtual MetaModel LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			return this.LoadModelAndDiagram(new DslModeling::SerializationResult(), store, modelFileName, diagramFileName, schemaResolver, validationController, serializerLocator);
 		}
 		
 		/// <summary>
-		/// Loads a World instance and its associated diagram file into the default partition of the given store.
+		/// Loads a MetaModel instance and its associated diagram file into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new World instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the World instance will be deserialized.</param>
+		/// <param name="store">The new MetaModel instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the MetaModel instance will be deserialized.</param>
 		/// <param name="diagramFileName">Name of the file from which the DSLDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
@@ -719,8 +719,8 @@ namespace CodeGeneration.DSL
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded World instance.</returns>
-		internal virtual World LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded MetaModel instance.</returns>
+		internal virtual MetaModel LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null)
@@ -732,11 +732,11 @@ namespace CodeGeneration.DSL
 		}
 			
 		/// <summary>
-		/// Loads a World instance and its associated diagram file.
+		/// Loads a MetaModel instance and its associated diagram file.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="modelPartition">Partition in which the new World instance will be created.</param>
-		/// <param name="modelFileName">Name of the file from which the World instance will be deserialized.</param>
+		/// <param name="modelPartition">Partition in which the new MetaModel instance will be created.</param>
+		/// <param name="modelFileName">Name of the file from which the MetaModel instance will be deserialized.</param>
 		/// <param name="diagramPartition">Partition in which the new DSLDiagram instance will be created.</param>
 		/// <param name="diagramFileName">Name of the file from which the DSLDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
@@ -750,9 +750,9 @@ namespace CodeGeneration.DSL
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded World instance.</returns>
+		/// <returns>The loaded MetaModel instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
-		internal virtual World LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		internal virtual MetaModel LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -765,7 +765,7 @@ namespace CodeGeneration.DSL
 				throw new global::System.ArgumentNullException("diagramFileName");
 			#endregion
 	
-			World modelRoot;
+			MetaModel modelRoot;
 	
 			// Ensure there is an outer transaction spanning both model and diagram load, so moniker resolution works properly.
 			if (!diagramPartition.Store.TransactionActive)
@@ -890,11 +890,11 @@ namespace CodeGeneration.DSL
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">World instance to be saved.</param>
+		/// <param name="modelRoot">MetaModel instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">DSLDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		internal virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, World modelRoot, string modelFileName, DSLDiagram diagram, string diagramFileName)
+		internal virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, MetaModel modelRoot, string modelFileName, DSLDiagram diagram, string diagramFileName)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -903,28 +903,28 @@ namespace CodeGeneration.DSL
 		/// Saves the given diagram to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">World instance to be saved.</param>
+		/// <param name="modelRoot">MetaModel instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">DSLDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		internal virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, World modelRoot, string modelFileName, DSLDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		internal virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, MetaModel modelRoot, string modelFileName, DSLDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given World and DSLDiagram to the given files, with specified encoding.
+		/// Saves the given MetaModel and DSLDiagram to the given files, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">World instance to be saved.</param>
+		/// <param name="modelRoot">MetaModel instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">DSLDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, World modelRoot, string modelFileName, DSLDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, MetaModel modelRoot, string modelFileName, DSLDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -1296,7 +1296,7 @@ namespace CodeGeneration.DSL
 		/// <param name="modelRoot">Root instance to be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the root instance.</param>
 		/// <returns>Model in XML form</returns>
-		internal virtual string GetSerializedModelString(global::CodeGeneration.DSL.World modelRoot, global::System.Text.Encoding encoding)
+		internal virtual string GetSerializedModelString(global::CodeGeneration.DSL.MetaModel modelRoot, global::System.Text.Encoding encoding)
 		{
 			string result = string.Empty;
 			if (modelRoot == null)
@@ -1499,7 +1499,7 @@ namespace CodeGeneration.DSL
 namespace CodeGeneration.DSL
 {
 	[DslValidation::ValidationState(DslValidation::ValidationState.Enabled)]
-	internal partial class World
+	internal partial class MetaModel
 	{
 		/// <summary>
 		/// Check to make sure all elements in the model will have unambiguous monikers when serialized.

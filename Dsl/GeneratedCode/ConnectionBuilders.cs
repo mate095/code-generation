@@ -15,7 +15,7 @@ namespace CodeGeneration.DSL
 	/// <summary>
 	/// ConnectionBuilder class to provide logic for constructing connections between elements.
 	/// </summary>
-	internal static partial class PredatorReferencesPreysBuilder
+	internal static partial class ClassReferencesDerivedClassesBuilder
 	{
 		#region Accept Connection Methods
 		/// <summary>
@@ -27,7 +27,7 @@ namespace CodeGeneration.DSL
 		public static bool CanAcceptSource(DslModeling::ModelElement candidate)
 		{
 			if (candidate == null) return false;
-			else if (candidate is global::CodeGeneration.DSL.Predator)
+			else if (candidate is global::CodeGeneration.DSL.Class)
 			{ 
 				return true;
 			}
@@ -44,7 +44,7 @@ namespace CodeGeneration.DSL
 		public static bool CanAcceptTarget(DslModeling::ModelElement candidate)
 		{
 			if (candidate == null) return false;
-			else if (candidate is global::CodeGeneration.DSL.Animal)
+			else if (candidate is global::CodeGeneration.DSL.Class)
 			{ 
 				return true;
 			}
@@ -83,13 +83,14 @@ namespace CodeGeneration.DSL
 			}
 			else // Check combinations
 			{
-				if (candidateSource is global::CodeGeneration.DSL.Predator)
+				if (candidateSource is global::CodeGeneration.DSL.Class)
 				{
-					if (candidateTarget is global::CodeGeneration.DSL.Animal)
+					if (candidateTarget is global::CodeGeneration.DSL.Class)
 					{
-						global::CodeGeneration.DSL.Predator sourcePredator = (global::CodeGeneration.DSL.Predator)candidateSource;
-						global::CodeGeneration.DSL.Animal targetAnimal = (global::CodeGeneration.DSL.Animal)candidateTarget;
-						if(targetAnimal == null || sourcePredator == null || global::CodeGeneration.DSL.PredatorReferencesPreys.GetLinks(sourcePredator, targetAnimal).Count > 0) return false;
+						global::CodeGeneration.DSL.Class sourceClass = (global::CodeGeneration.DSL.Class)candidateSource;
+						global::CodeGeneration.DSL.Class targetClass = (global::CodeGeneration.DSL.Class)candidateTarget;
+						if(targetClass == null || global::CodeGeneration.DSL.ClassReferencesDerivedClasses.GetLinkToBaseClass(targetClass) != null) return false;
+						if(targetClass == null || sourceClass == null || global::CodeGeneration.DSL.ClassReferencesDerivedClasses.GetLinks(sourceClass, targetClass).Count > 0) return false;
 						return true;
 					}
 				}
@@ -121,13 +122,13 @@ namespace CodeGeneration.DSL
 			
 			if (CanAcceptSourceAndTarget(source, target))
 			{
-				if (source is global::CodeGeneration.DSL.Predator)
+				if (source is global::CodeGeneration.DSL.Class)
 				{
-					if (target is global::CodeGeneration.DSL.Animal)
+					if (target is global::CodeGeneration.DSL.Class)
 					{
-						global::CodeGeneration.DSL.Predator sourceAccepted = (global::CodeGeneration.DSL.Predator)source;
-						global::CodeGeneration.DSL.Animal targetAccepted = (global::CodeGeneration.DSL.Animal)target;
-						DslModeling::ElementLink result = new global::CodeGeneration.DSL.PredatorReferencesPreys(sourceAccepted, targetAccepted);
+						global::CodeGeneration.DSL.Class sourceAccepted = (global::CodeGeneration.DSL.Class)source;
+						global::CodeGeneration.DSL.Class targetAccepted = (global::CodeGeneration.DSL.Class)target;
+						DslModeling::ElementLink result = new global::CodeGeneration.DSL.ClassReferencesDerivedClasses(sourceAccepted, targetAccepted);
 						if (DslModeling::DomainClassInfo.HasNameProperty(result))
 						{
 							DslModeling::DomainClassInfo.SetUniqueName(result);

@@ -125,117 +125,165 @@
     <value>DSL</value>
     <comment>DisplayName for DslLibrary &apos;DSL&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.World.Description" xml:space="preserve">
+  <data name="CodeGeneration.DSL.MetaModel.Description" xml:space="preserve">
     <value>The root in which all other elements are embedded. Appears as a diagram.</value>
-    <comment>Description for DomainClass &apos;World&apos;</comment>
+    <comment>Description for DomainClass &apos;MetaModel&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.World.DisplayName" xml:space="preserve">
-    <value>World</value>
-    <comment>DisplayName for DomainClass &apos;World&apos;</comment>
+  <data name="CodeGeneration.DSL.MetaModel.DisplayName" xml:space="preserve">
+    <value>Meta Model</value>
+    <comment>DisplayName for DomainClass &apos;MetaModel&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Animal.Description" xml:space="preserve">
+  <data name="CodeGeneration.DSL.Class.Description" xml:space="preserve">
     <value>Elements embedded in the model. Appear as boxes on the diagram.</value>
-    <comment>Description for DomainClass &apos;Animal&apos;</comment>
+    <comment>Description for DomainClass &apos;Class&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Animal.DisplayName" xml:space="preserve">
-    <value>Animal</value>
-    <comment>DisplayName for DomainClass &apos;Animal&apos;</comment>
+  <data name="CodeGeneration.DSL.Class.DisplayName" xml:space="preserve">
+    <value>Class</value>
+    <comment>DisplayName for DomainClass &apos;Class&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Animal/Name.Description" xml:space="preserve">
-    <value>Description for CodeGeneration.DSL.Animal.Name</value>
-    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Animal&apos;</comment>
+  <data name="CodeGeneration.DSL.Class/Name.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Class.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Class&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Animal/Name.DisplayName" xml:space="preserve">
+  <data name="CodeGeneration.DSL.Class/Name.DisplayName" xml:space="preserve">
     <value>Name</value>
-    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Animal&apos;</comment>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Class&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Animal/NumberOfLegs.Description" xml:space="preserve">
-    <value>Description for CodeGeneration.DSL.Animal.Number Of Legs</value>
-    <comment>Description for DomainProperty &apos;NumberOfLegs&apos; on DomainClass &apos;Animal&apos;</comment>
+  <data name="CodeGeneration.DSL.Property.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Property</value>
+    <comment>Description for DomainClass &apos;Property&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Animal/NumberOfLegs.DisplayName" xml:space="preserve">
-    <value>Number Of Legs</value>
-    <comment>DisplayName for DomainProperty &apos;NumberOfLegs&apos; on DomainClass &apos;Animal&apos;</comment>
+  <data name="CodeGeneration.DSL.Property.DisplayName" xml:space="preserve">
+    <value>Property</value>
+    <comment>DisplayName for DomainClass &apos;Property&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Animal/AnimalId.Description" xml:space="preserve">
-    <value>Description for CodeGeneration.DSL.Animal.Animal Id</value>
-    <comment>Description for DomainProperty &apos;AnimalId&apos; on DomainClass &apos;Animal&apos;</comment>
+  <data name="CodeGeneration.DSL.Property/Name.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Property.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Property&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Animal/AnimalId.DisplayName" xml:space="preserve">
-    <value>Animal Id</value>
-    <comment>DisplayName for DomainProperty &apos;AnimalId&apos; on DomainClass &apos;Animal&apos;</comment>
+  <data name="CodeGeneration.DSL.Property/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Property&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Predator.Description" xml:space="preserve">
-    <value>Description for CodeGeneration.DSL.Predator</value>
-    <comment>Description for DomainClass &apos;Predator&apos;</comment>
+  <data name="CodeGeneration.DSL.Property/Type.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Property.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;Property&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.Predator.DisplayName" xml:space="preserve">
-    <value>Predator</value>
-    <comment>DisplayName for DomainClass &apos;Predator&apos;</comment>
+  <data name="CodeGeneration.DSL.Property/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;Property&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.WorldHasAnimals.Description" xml:space="preserve">
+  <data name="CodeGeneration.DSL.Property/IsReadOnly.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Property.Is Read Only</value>
+    <comment>Description for DomainProperty &apos;IsReadOnly&apos; on DomainClass &apos;Property&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.Property/IsReadOnly.DisplayName" xml:space="preserve">
+    <value>Is Read Only</value>
+    <comment>DisplayName for DomainProperty &apos;IsReadOnly&apos; on DomainClass &apos;Property&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.Property/DefaultValue.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.Property.Default Value</value>
+    <comment>Description for DomainProperty &apos;DefaultValue&apos; on DomainClass &apos;Property&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.Property/DefaultValue.DisplayName" xml:space="preserve">
+    <value>Default Value</value>
+    <comment>DisplayName for DomainProperty &apos;DefaultValue&apos; on DomainClass &apos;Property&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.MetaModelHasClasses.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
-    <comment>Description for DomainClass &apos;WorldHasAnimals&apos;</comment>
+    <comment>Description for DomainClass &apos;MetaModelHasClasses&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.WorldHasAnimals.DisplayName" xml:space="preserve">
-    <value>World Has Animals</value>
-    <comment>DisplayName for DomainClass &apos;WorldHasAnimals&apos;</comment>
+  <data name="CodeGeneration.DSL.MetaModelHasClasses.DisplayName" xml:space="preserve">
+    <value>Meta Model Has Classes</value>
+    <comment>DisplayName for DomainClass &apos;MetaModelHasClasses&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.WorldHasAnimals/World.Description" xml:space="preserve">
+  <data name="CodeGeneration.DSL.MetaModelHasClasses/MetaModel.Description" xml:space="preserve">
     <value></value>
-    <comment>Description for DomainRole &apos;World&apos; on DomainRelationship &apos;WorldHasAnimals&apos;</comment>
+    <comment>Description for DomainRole &apos;MetaModel&apos; on DomainRelationship &apos;MetaModelHasClasses&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.WorldHasAnimals/World.DisplayName" xml:space="preserve">
-    <value>World</value>
-    <comment>DisplayName for DomainRole &apos;World&apos; on DomainRelationship &apos;WorldHasAnimals&apos;</comment>
+  <data name="CodeGeneration.DSL.MetaModelHasClasses/MetaModel.DisplayName" xml:space="preserve">
+    <value>Meta Model</value>
+    <comment>DisplayName for DomainRole &apos;MetaModel&apos; on DomainRelationship &apos;MetaModelHasClasses&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.WorldHasAnimals/World.PropertyDisplayName" xml:space="preserve">
-    <value>Animals</value>
-    <comment>PropertyDisplayName for DomainRole &apos;World&apos; on DomainRelationship &apos;WorldHasAnimals&apos;</comment>
+  <data name="CodeGeneration.DSL.MetaModelHasClasses/MetaModel.PropertyDisplayName" xml:space="preserve">
+    <value>Classes</value>
+    <comment>PropertyDisplayName for DomainRole &apos;MetaModel&apos; on DomainRelationship &apos;MetaModelHasClasses&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.WorldHasAnimals/Element.Description" xml:space="preserve">
+  <data name="CodeGeneration.DSL.MetaModelHasClasses/Element.Description" xml:space="preserve">
     <value></value>
-    <comment>Description for DomainRole &apos;Element&apos; on DomainRelationship &apos;WorldHasAnimals&apos;</comment>
+    <comment>Description for DomainRole &apos;Element&apos; on DomainRelationship &apos;MetaModelHasClasses&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.WorldHasAnimals/Element.DisplayName" xml:space="preserve">
+  <data name="CodeGeneration.DSL.MetaModelHasClasses/Element.DisplayName" xml:space="preserve">
     <value>Element</value>
-    <comment>DisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;WorldHasAnimals&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;MetaModelHasClasses&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.WorldHasAnimals/Element.PropertyDisplayName" xml:space="preserve">
-    <value>World</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;WorldHasAnimals&apos;</comment>
+  <data name="CodeGeneration.DSL.MetaModelHasClasses/Element.PropertyDisplayName" xml:space="preserve">
+    <value>Meta Model</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;MetaModelHasClasses&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.PredatorReferencesPreys.Description" xml:space="preserve">
-    <value>Description for CodeGeneration.DSL.PredatorReferencesPreys</value>
-    <comment>Description for DomainClass &apos;PredatorReferencesPreys&apos;</comment>
+  <data name="CodeGeneration.DSL.ClassHasProperties.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.ClassHasProperties</value>
+    <comment>Description for DomainClass &apos;ClassHasProperties&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.PredatorReferencesPreys.DisplayName" xml:space="preserve">
-    <value>Predator References Preys</value>
-    <comment>DisplayName for DomainClass &apos;PredatorReferencesPreys&apos;</comment>
+  <data name="CodeGeneration.DSL.ClassHasProperties.DisplayName" xml:space="preserve">
+    <value>Class Has Properties</value>
+    <comment>DisplayName for DomainClass &apos;ClassHasProperties&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Predator.Description" xml:space="preserve">
-    <value>Description for CodeGeneration.DSL.PredatorReferencesPreys.Predator</value>
-    <comment>Description for DomainRole &apos;Predator&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  <data name="CodeGeneration.DSL.ClassHasProperties/Class.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.ClassHasProperties.Class</value>
+    <comment>Description for DomainRole &apos;Class&apos; on DomainRelationship &apos;ClassHasProperties&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Predator.DisplayName" xml:space="preserve">
-    <value>Predator</value>
-    <comment>DisplayName for DomainRole &apos;Predator&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  <data name="CodeGeneration.DSL.ClassHasProperties/Class.DisplayName" xml:space="preserve">
+    <value>Class</value>
+    <comment>DisplayName for DomainRole &apos;Class&apos; on DomainRelationship &apos;ClassHasProperties&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Predator.PropertyDisplayName" xml:space="preserve">
-    <value>Preys</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Predator&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  <data name="CodeGeneration.DSL.ClassHasProperties/Class.PropertyDisplayName" xml:space="preserve">
+    <value>Properties</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Class&apos; on DomainRelationship &apos;ClassHasProperties&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Animal.Description" xml:space="preserve">
-    <value>Description for CodeGeneration.DSL.PredatorReferencesPreys.Animal</value>
-    <comment>Description for DomainRole &apos;Animal&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  <data name="CodeGeneration.DSL.ClassHasProperties/Property.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.ClassHasProperties.Property</value>
+    <comment>Description for DomainRole &apos;Property&apos; on DomainRelationship &apos;ClassHasProperties&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Animal.DisplayName" xml:space="preserve">
-    <value>Animal</value>
-    <comment>DisplayName for DomainRole &apos;Animal&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  <data name="CodeGeneration.DSL.ClassHasProperties/Property.DisplayName" xml:space="preserve">
+    <value>Property</value>
+    <comment>DisplayName for DomainRole &apos;Property&apos; on DomainRelationship &apos;ClassHasProperties&apos;</comment>
   </data>
-  <data name="CodeGeneration.DSL.PredatorReferencesPreys/Animal.PropertyDisplayName" xml:space="preserve">
-    <value>Predators</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Animal&apos; on DomainRelationship &apos;PredatorReferencesPreys&apos;</comment>
+  <data name="CodeGeneration.DSL.ClassHasProperties/Property.PropertyDisplayName" xml:space="preserve">
+    <value>Class</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Property&apos; on DomainRelationship &apos;ClassHasProperties&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.ClassReferencesDerivedClasses</value>
+    <comment>Description for DomainClass &apos;ClassReferencesDerivedClasses&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses.DisplayName" xml:space="preserve">
+    <value>Class References Derived Classes</value>
+    <comment>DisplayName for DomainClass &apos;ClassReferencesDerivedClasses&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses/SourceClass.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.ClassReferencesDerivedClasses.SourceClass</value>
+    <comment>Description for DomainRole &apos;SourceClass&apos; on DomainRelationship &apos;ClassReferencesDerivedClasses&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses/SourceClass.DisplayName" xml:space="preserve">
+    <value>Source Class</value>
+    <comment>DisplayName for DomainRole &apos;SourceClass&apos; on DomainRelationship &apos;ClassReferencesDerivedClasses&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses/SourceClass.PropertyDisplayName" xml:space="preserve">
+    <value>Derived Classes</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SourceClass&apos; on DomainRelationship &apos;ClassReferencesDerivedClasses&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses/TargetClass.Description" xml:space="preserve">
+    <value>Description for CodeGeneration.DSL.ClassReferencesDerivedClasses.TargetClass</value>
+    <comment>Description for DomainRole &apos;TargetClass&apos; on DomainRelationship &apos;ClassReferencesDerivedClasses&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses/TargetClass.DisplayName" xml:space="preserve">
+    <value>Target Class</value>
+    <comment>DisplayName for DomainRole &apos;TargetClass&apos; on DomainRelationship &apos;ClassReferencesDerivedClasses&apos;</comment>
+  </data>
+  <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses/TargetClass.PropertyDisplayName" xml:space="preserve">
+    <value>Base Class</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TargetClass&apos; on DomainRelationship &apos;ClassReferencesDerivedClasses&apos;</comment>
   </data>
   <data name="FormatList" xml:space="preserve">
     <value>DSL (*.model)|*.model</value>

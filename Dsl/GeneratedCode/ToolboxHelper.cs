@@ -154,7 +154,7 @@ namespace CodeGeneration.DSL
 						resourceManager.GetString("DSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"CreateExampleClassF1Keyword", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("ExampleElementToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::CodeGeneration.DSL.Animal.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						CreateElementToolPrototype(store, global::CodeGeneration.DSL.Class.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

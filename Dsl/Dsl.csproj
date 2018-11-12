@@ -74,12 +74,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="_Interfaces\IAnimal.cs" />
-    <Compile Include="_Interfaces\IPredator.cs" />
-    <Compile Include="_Interfaces\IWorld.cs" />
-    <Compile Include="_Partial\Animal.cs" />
-    <Compile Include="_Partial\Predator.cs" />
-    <Compile Include="_Partial\World.cs" />
+    <Compile Include="_Interfaces\IClass.cs" />
+    <Compile Include="_Interfaces\IMetaModel.cs" />
+    <Compile Include="_Interfaces\IProperty.cs" />
+    <Compile Include="_Partial\Class.cs" />
+    <Compile Include="_Partial\MetaModel.cs" />
+    <Compile Include="_Partial\Property.cs" />
     <None Include="..\Key.snk">
       <Link>Key.snk</Link>
     </None>

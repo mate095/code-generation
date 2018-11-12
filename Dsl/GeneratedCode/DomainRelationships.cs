@@ -12,33 +12,33 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace CodeGeneration.DSL
 {
 	/// <summary>
-	/// DomainRelationship WorldHasAnimals
+	/// DomainRelationship MetaModelHasClasses
 	/// Embedding relationship between the Model and Elements
 	/// </summary>
-	[DslDesign::DisplayNameResource("CodeGeneration.DSL.WorldHasAnimals.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("CodeGeneration.DSL.WorldHasAnimals.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("CodeGeneration.DSL.MetaModelHasClasses.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("CodeGeneration.DSL.MetaModelHasClasses.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::CodeGeneration.DSL.DSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("faceaa50-72a5-4ebb-bc95-66c6e59e5fab")]
-	public partial class WorldHasAnimals : DslModeling::ElementLink
+	public partial class MetaModelHasClasses : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// WorldHasAnimals domain class Id.
+		/// MetaModelHasClasses domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xfaceaa50, 0x72a5, 0x4ebb, 0xbc, 0x95, 0x66, 0xc6, 0xe5, 0x9e, 0x5f, 0xab);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a WorldHasAnimals link in the same Partition as the given World
+		/// Creates a MetaModelHasClasses link in the same Partition as the given MetaModel
 		/// </summary>
-		/// <param name="source">World to use as the source of the relationship.</param>
-		/// <param name="target">Animal to use as the target of the relationship.</param>
-		internal WorldHasAnimals(World source, Animal target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(WorldHasAnimals.WorldDomainRoleId, source), new DslModeling::RoleAssignment(WorldHasAnimals.ElementDomainRoleId, target)}, null)
+		/// <param name="source">MetaModel to use as the source of the relationship.</param>
+		/// <param name="target">Class to use as the target of the relationship.</param>
+		internal MetaModelHasClasses(MetaModel source, Class target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(MetaModelHasClasses.MetaModelDomainRoleId, source), new DslModeling::RoleAssignment(MetaModelHasClasses.ElementDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -47,7 +47,7 @@ namespace CodeGeneration.DSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public WorldHasAnimals(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public MetaModelHasClasses(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -58,7 +58,7 @@ namespace CodeGeneration.DSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public WorldHasAnimals(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public MetaModelHasClasses(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -68,7 +68,7 @@ namespace CodeGeneration.DSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public WorldHasAnimals(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public MetaModelHasClasses(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -79,59 +79,59 @@ namespace CodeGeneration.DSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public WorldHasAnimals(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public MetaModelHasClasses(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
 		#endregion
-		#region World domain role code
+		#region MetaModel domain role code
 		
 		/// <summary>
-		/// World domain role Id.
+		/// MetaModel domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid WorldDomainRoleId = new global::System.Guid(0x9a4fa787, 0xc83c, 0x44a5, 0x92, 0x07, 0xed, 0x01, 0x1a, 0x45, 0xe9, 0x11);
+		public static readonly global::System.Guid MetaModelDomainRoleId = new global::System.Guid(0x9a4fa787, 0xc83c, 0x44a5, 0x92, 0x07, 0xed, 0x01, 0x1a, 0x45, 0xe9, 0x11);
 		
 		/// <summary>
-		/// DomainRole World
+		/// DomainRole MetaModel
 		/// </summary>
-		[DslDesign::DisplayNameResource("CodeGeneration.DSL.WorldHasAnimals/World.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("CodeGeneration.DSL.WorldHasAnimals/World.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Animals", PropertyDisplayNameKey="CodeGeneration.DSL.WorldHasAnimals/World.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.MetaModelHasClasses/MetaModel.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.MetaModelHasClasses/MetaModel.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Classes", PropertyDisplayNameKey="CodeGeneration.DSL.MetaModelHasClasses/MetaModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("9a4fa787-c83c-44a5-9207-ed011a45e911")]
-		internal virtual World World
+		internal virtual MetaModel MetaModel
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (World)DslModeling::DomainRoleInfo.GetRolePlayer(this, WorldDomainRoleId);
+				return (MetaModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, MetaModelDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, WorldDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, MetaModelDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access World of a Animal
+		#region Static methods to access MetaModel of a Class
 		/// <summary>
-		/// Gets World.
+		/// Gets MetaModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static World GetWorld(Animal element)
+		internal static MetaModel GetMetaModel(Class element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ElementDomainRoleId) as World;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ElementDomainRoleId) as MetaModel;
 		}
 		
 		/// <summary>
-		/// Sets World.
+		/// Sets MetaModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static void SetWorld(Animal element, World newWorld)
+		internal static void SetMetaModel(Class element, MetaModel newMetaModel)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, ElementDomainRoleId, newWorld);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ElementDomainRoleId, newMetaModel);
 		}
 		#endregion
 		#region Element domain role code
@@ -144,16 +144,16 @@ namespace CodeGeneration.DSL
 		/// <summary>
 		/// DomainRole Element
 		/// </summary>
-		[DslDesign::DisplayNameResource("CodeGeneration.DSL.WorldHasAnimals/Element.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("CodeGeneration.DSL.WorldHasAnimals/Element.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "World", PropertyDisplayNameKey="CodeGeneration.DSL.WorldHasAnimals/Element.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.MetaModelHasClasses/Element.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.MetaModelHasClasses/Element.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "MetaModel", PropertyDisplayNameKey="CodeGeneration.DSL.MetaModelHasClasses/Element.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
 		[DslModeling::DomainObjectId("3224416b-0762-4a1a-99a1-e8a28c02b46c")]
-		internal virtual Animal Element
+		internal virtual Class Element
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (Animal)DslModeling::DomainRoleInfo.GetRolePlayer(this, ElementDomainRoleId);
+				return (Class)DslModeling::DomainRoleInfo.GetRolePlayer(this, ElementDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
@@ -163,37 +163,37 @@ namespace CodeGeneration.DSL
 		}
 				
 		#endregion
-		#region Static methods to access Animals of a World
+		#region Static methods to access Classes of a MetaModel
 		/// <summary>
-		/// Gets a list of Animals.
+		/// Gets a list of Classes.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static DslModeling::LinkedElementCollection<Animal> GetAnimals(World element)
+		internal static DslModeling::LinkedElementCollection<Class> GetClasses(MetaModel element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Animal>, Animal>(element, WorldDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Class>, Class>(element, MetaModelDomainRoleId);
 		}
 		#endregion
-		#region World link accessor
+		#region MetaModel link accessor
 		/// <summary>
-		/// Get the list of WorldHasAnimals links to a World.
+		/// Get the list of MetaModelHasClasses links to a MetaModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.WorldHasAnimals> GetLinksToAnimals ( global::CodeGeneration.DSL.World worldInstance )
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.MetaModelHasClasses> GetLinksToClasses ( global::CodeGeneration.DSL.MetaModel metaModelInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.WorldHasAnimals>(worldInstance, global::CodeGeneration.DSL.WorldHasAnimals.WorldDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.MetaModelHasClasses>(metaModelInstance, global::CodeGeneration.DSL.MetaModelHasClasses.MetaModelDomainRoleId);
 		}
 		#endregion
 		#region Element link accessor
 		/// <summary>
-		/// Get the WorldHasAnimals link to a Animal.
+		/// Get the MetaModelHasClasses link to a Class.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::CodeGeneration.DSL.WorldHasAnimals GetLinkToWorld (global::CodeGeneration.DSL.Animal elementInstance)
+		internal static global::CodeGeneration.DSL.MetaModelHasClasses GetLinkToMetaModel (global::CodeGeneration.DSL.Class elementInstance)
 		{
-			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.WorldHasAnimals> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.WorldHasAnimals>(elementInstance, global::CodeGeneration.DSL.WorldHasAnimals.ElementDomainRoleId);
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.MetaModelHasClasses> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.MetaModelHasClasses>(elementInstance, global::CodeGeneration.DSL.MetaModelHasClasses.ElementDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Element not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -205,18 +205,18 @@ namespace CodeGeneration.DSL
 			}
 		}
 		#endregion
-		#region WorldHasAnimals instance accessors
+		#region MetaModelHasClasses instance accessors
 		
 		/// <summary>
-		/// Get any WorldHasAnimals links between a given World and a Animal.
+		/// Get any MetaModelHasClasses links between a given MetaModel and a Class.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.WorldHasAnimals> GetLinks( global::CodeGeneration.DSL.World source, global::CodeGeneration.DSL.Animal target )
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.MetaModelHasClasses> GetLinks( global::CodeGeneration.DSL.MetaModel source, global::CodeGeneration.DSL.Class target )
 		{
-			global::System.Collections.Generic.List<global::CodeGeneration.DSL.WorldHasAnimals> outLinks = new global::System.Collections.Generic.List<global::CodeGeneration.DSL.WorldHasAnimals>();
-			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.WorldHasAnimals> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.WorldHasAnimals>(source, global::CodeGeneration.DSL.WorldHasAnimals.WorldDomainRoleId);
-			foreach ( global::CodeGeneration.DSL.WorldHasAnimals link in links )
+			global::System.Collections.Generic.List<global::CodeGeneration.DSL.MetaModelHasClasses> outLinks = new global::System.Collections.Generic.List<global::CodeGeneration.DSL.MetaModelHasClasses>();
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.MetaModelHasClasses> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.MetaModelHasClasses>(source, global::CodeGeneration.DSL.MetaModelHasClasses.MetaModelDomainRoleId);
+			foreach ( global::CodeGeneration.DSL.MetaModelHasClasses link in links )
 			{
 				if ( target.Equals(link.Element) )
 				{
@@ -226,14 +226,14 @@ namespace CodeGeneration.DSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one WorldHasAnimals link between a given Worldand a Animal.
+		/// Get the one MetaModelHasClasses link between a given MetaModeland a Class.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::CodeGeneration.DSL.WorldHasAnimals GetLink( global::CodeGeneration.DSL.World source, global::CodeGeneration.DSL.Animal target )
+		internal static global::CodeGeneration.DSL.MetaModelHasClasses GetLink( global::CodeGeneration.DSL.MetaModel source, global::CodeGeneration.DSL.Class target )
 		{
-			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.WorldHasAnimals> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.WorldHasAnimals>(source, global::CodeGeneration.DSL.WorldHasAnimals.WorldDomainRoleId);
-			foreach ( global::CodeGeneration.DSL.WorldHasAnimals link in links )
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.MetaModelHasClasses> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.MetaModelHasClasses>(source, global::CodeGeneration.DSL.MetaModelHasClasses.MetaModelDomainRoleId);
+			foreach ( global::CodeGeneration.DSL.MetaModelHasClasses link in links )
 			{
 				if ( target.Equals(link.Element) )
 				{
@@ -249,33 +249,33 @@ namespace CodeGeneration.DSL
 namespace CodeGeneration.DSL
 {
 	/// <summary>
-	/// DomainRelationship PredatorReferencesPreys
-	/// Description for CodeGeneration.DSL.PredatorReferencesPreys
+	/// DomainRelationship ClassHasProperties
+	/// Description for CodeGeneration.DSL.ClassHasProperties
 	/// </summary>
-	[DslDesign::DisplayNameResource("CodeGeneration.DSL.PredatorReferencesPreys.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("CodeGeneration.DSL.PredatorReferencesPreys.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("CodeGeneration.DSL.ClassHasProperties.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("CodeGeneration.DSL.ClassHasProperties.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::CodeGeneration.DSL.DSLDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship()]
-	[DslModeling::DomainObjectId("7bfc7180-5767-4707-b842-e622fc9eb5e6")]
-	public partial class PredatorReferencesPreys : DslModeling::ElementLink
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("7f4d6c55-ee74-4a7f-a8cf-60cbdc80287b")]
+	public partial class ClassHasProperties : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// PredatorReferencesPreys domain class Id.
+		/// ClassHasProperties domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7bfc7180, 0x5767, 0x4707, 0xb8, 0x42, 0xe6, 0x22, 0xfc, 0x9e, 0xb5, 0xe6);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7f4d6c55, 0xee74, 0x4a7f, 0xa8, 0xcf, 0x60, 0xcb, 0xdc, 0x80, 0x28, 0x7b);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a PredatorReferencesPreys link in the same Partition as the given Predator
+		/// Creates a ClassHasProperties link in the same Partition as the given Class
 		/// </summary>
-		/// <param name="source">Predator to use as the source of the relationship.</param>
-		/// <param name="target">Animal to use as the target of the relationship.</param>
-		internal PredatorReferencesPreys(Predator source, Animal target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(PredatorReferencesPreys.PredatorDomainRoleId, source), new DslModeling::RoleAssignment(PredatorReferencesPreys.AnimalDomainRoleId, target)}, null)
+		/// <param name="source">Class to use as the source of the relationship.</param>
+		/// <param name="target">Property to use as the target of the relationship.</param>
+		internal ClassHasProperties(Class source, Property target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ClassHasProperties.ClassDomainRoleId, source), new DslModeling::RoleAssignment(ClassHasProperties.PropertyDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -284,7 +284,7 @@ namespace CodeGeneration.DSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public PredatorReferencesPreys(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public ClassHasProperties(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -295,7 +295,7 @@ namespace CodeGeneration.DSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public PredatorReferencesPreys(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ClassHasProperties(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -305,7 +305,7 @@ namespace CodeGeneration.DSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public PredatorReferencesPreys(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public ClassHasProperties(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -316,129 +316,148 @@ namespace CodeGeneration.DSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public PredatorReferencesPreys(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ClassHasProperties(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
 		#endregion
-		#region Predator domain role code
+		#region Class domain role code
 		
 		/// <summary>
-		/// Predator domain role Id.
+		/// Class domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid PredatorDomainRoleId = new global::System.Guid(0x7650b19c, 0x41eb, 0x4365, 0x97, 0xa4, 0xc2, 0x34, 0xa5, 0x18, 0x4b, 0x0d);
+		public static readonly global::System.Guid ClassDomainRoleId = new global::System.Guid(0x076be4b8, 0x8650, 0x4014, 0xa6, 0xe6, 0x2f, 0x9c, 0xb0, 0xce, 0x39, 0x34);
 		
 		/// <summary>
-		/// DomainRole Predator
-		/// Description for CodeGeneration.DSL.PredatorReferencesPreys.Predator
+		/// DomainRole Class
+		/// Description for CodeGeneration.DSL.ClassHasProperties.Class
 		/// </summary>
-		[DslDesign::DisplayNameResource("CodeGeneration.DSL.PredatorReferencesPreys/Predator.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("CodeGeneration.DSL.PredatorReferencesPreys/Predator.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Preys", PropertyDisplayNameKey="CodeGeneration.DSL.PredatorReferencesPreys/Predator.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("7650b19c-41eb-4365-97a4-c234a5184b0d")]
-		internal virtual Predator Predator
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.ClassHasProperties/Class.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.ClassHasProperties/Class.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Properties", PropertyDisplayNameKey="CodeGeneration.DSL.ClassHasProperties/Class.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("076be4b8-8650-4014-a6e6-2f9cb0ce3934")]
+		internal virtual Class Class
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (Predator)DslModeling::DomainRoleInfo.GetRolePlayer(this, PredatorDomainRoleId);
+				return (Class)DslModeling::DomainRoleInfo.GetRolePlayer(this, ClassDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, PredatorDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ClassDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access Predators of a Animal
+		#region Static methods to access Class of a Property
 		/// <summary>
-		/// Gets a list of Predators.
+		/// Gets Class.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static DslModeling::LinkedElementCollection<Predator> GetPredators(Animal element)
+		internal static Class GetClass(Property element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Predator>, Predator>(element, AnimalDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PropertyDomainRoleId) as Class;
+		}
+		
+		/// <summary>
+		/// Sets Class.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static void SetClass(Property element, Class newClass)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, PropertyDomainRoleId, newClass);
 		}
 		#endregion
-		#region Animal domain role code
+		#region Property domain role code
 		
 		/// <summary>
-		/// Animal domain role Id.
+		/// Property domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid AnimalDomainRoleId = new global::System.Guid(0x12f126b0, 0x65c1, 0x45f5, 0xa8, 0x31, 0x7a, 0x7c, 0x0f, 0x8c, 0x38, 0xe1);
+		public static readonly global::System.Guid PropertyDomainRoleId = new global::System.Guid(0xc033081f, 0x5eb4, 0x4ed5, 0x80, 0xda, 0xff, 0xac, 0x22, 0x45, 0xf4, 0x3c);
 		
 		/// <summary>
-		/// DomainRole Animal
-		/// Description for CodeGeneration.DSL.PredatorReferencesPreys.Animal
+		/// DomainRole Property
+		/// Description for CodeGeneration.DSL.ClassHasProperties.Property
 		/// </summary>
-		[DslDesign::DisplayNameResource("CodeGeneration.DSL.PredatorReferencesPreys/Animal.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("CodeGeneration.DSL.PredatorReferencesPreys/Animal.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Predators", PropertyDisplayNameKey="CodeGeneration.DSL.PredatorReferencesPreys/Animal.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("12f126b0-65c1-45f5-a831-7a7c0f8c38e1")]
-		internal virtual Animal Animal
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.ClassHasProperties/Property.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.ClassHasProperties/Property.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Class", PropertyDisplayNameKey="CodeGeneration.DSL.ClassHasProperties/Property.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("c033081f-5eb4-4ed5-80da-ffac2245f43c")]
+		internal virtual Property Property
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (Animal)DslModeling::DomainRoleInfo.GetRolePlayer(this, AnimalDomainRoleId);
+				return (Property)DslModeling::DomainRoleInfo.GetRolePlayer(this, PropertyDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, AnimalDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, PropertyDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access Preys of a Predator
+		#region Static methods to access Properties of a Class
 		/// <summary>
-		/// Gets a list of Preys.
+		/// Gets a list of Properties.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static DslModeling::LinkedElementCollection<Animal> GetPreys(Predator element)
+		internal static DslModeling::LinkedElementCollection<Property> GetProperties(Class element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Animal>, Animal>(element, PredatorDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Property>, Property>(element, ClassDomainRoleId);
 		}
 		#endregion
-		#region Predator link accessor
+		#region Class link accessor
 		/// <summary>
-		/// Get the list of PredatorReferencesPreys links to a Predator.
+		/// Get the list of ClassHasProperties links to a Class.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.PredatorReferencesPreys> GetLinksToPreys ( global::CodeGeneration.DSL.Predator predatorInstance )
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.ClassHasProperties> GetLinksToProperties ( global::CodeGeneration.DSL.Class classInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.PredatorReferencesPreys>(predatorInstance, global::CodeGeneration.DSL.PredatorReferencesPreys.PredatorDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassHasProperties>(classInstance, global::CodeGeneration.DSL.ClassHasProperties.ClassDomainRoleId);
 		}
 		#endregion
-		#region Animal link accessor
+		#region Property link accessor
 		/// <summary>
-		/// Get the list of PredatorReferencesPreys links to a Animal.
+		/// Get the ClassHasProperties link to a Property.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.PredatorReferencesPreys> GetLinksToPredators ( global::CodeGeneration.DSL.Animal animalInstance )
+		internal static global::CodeGeneration.DSL.ClassHasProperties GetLinkToClass (global::CodeGeneration.DSL.Property propertyInstance)
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.PredatorReferencesPreys>(animalInstance, global::CodeGeneration.DSL.PredatorReferencesPreys.AnimalDomainRoleId);
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.ClassHasProperties> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassHasProperties>(propertyInstance, global::CodeGeneration.DSL.ClassHasProperties.PropertyDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Property not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
 		}
 		#endregion
-		#region PredatorReferencesPreys instance accessors
+		#region ClassHasProperties instance accessors
 		
 		/// <summary>
-		/// Get any PredatorReferencesPreys links between a given Predator and a Animal.
+		/// Get any ClassHasProperties links between a given Class and a Property.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.PredatorReferencesPreys> GetLinks( global::CodeGeneration.DSL.Predator source, global::CodeGeneration.DSL.Animal target )
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.ClassHasProperties> GetLinks( global::CodeGeneration.DSL.Class source, global::CodeGeneration.DSL.Property target )
 		{
-			global::System.Collections.Generic.List<global::CodeGeneration.DSL.PredatorReferencesPreys> outLinks = new global::System.Collections.Generic.List<global::CodeGeneration.DSL.PredatorReferencesPreys>();
-			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.PredatorReferencesPreys> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.PredatorReferencesPreys>(source, global::CodeGeneration.DSL.PredatorReferencesPreys.PredatorDomainRoleId);
-			foreach ( global::CodeGeneration.DSL.PredatorReferencesPreys link in links )
+			global::System.Collections.Generic.List<global::CodeGeneration.DSL.ClassHasProperties> outLinks = new global::System.Collections.Generic.List<global::CodeGeneration.DSL.ClassHasProperties>();
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.ClassHasProperties> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassHasProperties>(source, global::CodeGeneration.DSL.ClassHasProperties.ClassDomainRoleId);
+			foreach ( global::CodeGeneration.DSL.ClassHasProperties link in links )
 			{
-				if ( target.Equals(link.Animal) )
+				if ( target.Equals(link.Property) )
 				{
 					outLinks.Add(link);
 				}
@@ -446,16 +465,255 @@ namespace CodeGeneration.DSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one PredatorReferencesPreys link between a given Predatorand a Animal.
+		/// Get the one ClassHasProperties link between a given Classand a Property.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::CodeGeneration.DSL.PredatorReferencesPreys GetLink( global::CodeGeneration.DSL.Predator source, global::CodeGeneration.DSL.Animal target )
+		internal static global::CodeGeneration.DSL.ClassHasProperties GetLink( global::CodeGeneration.DSL.Class source, global::CodeGeneration.DSL.Property target )
 		{
-			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.PredatorReferencesPreys> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.PredatorReferencesPreys>(source, global::CodeGeneration.DSL.PredatorReferencesPreys.PredatorDomainRoleId);
-			foreach ( global::CodeGeneration.DSL.PredatorReferencesPreys link in links )
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.ClassHasProperties> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassHasProperties>(source, global::CodeGeneration.DSL.ClassHasProperties.ClassDomainRoleId);
+			foreach ( global::CodeGeneration.DSL.ClassHasProperties link in links )
 			{
-				if ( target.Equals(link.Animal) )
+				if ( target.Equals(link.Property) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace CodeGeneration.DSL
+{
+	/// <summary>
+	/// DomainRelationship ClassReferencesDerivedClasses
+	/// Description for CodeGeneration.DSL.ClassReferencesDerivedClasses
+	/// </summary>
+	[DslDesign::DisplayNameResource("CodeGeneration.DSL.ClassReferencesDerivedClasses.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("CodeGeneration.DSL.ClassReferencesDerivedClasses.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::CodeGeneration.DSL.DSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("5f8c5fdd-9a1c-4502-9d54-c67e234d523b")]
+	public partial class ClassReferencesDerivedClasses : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ClassReferencesDerivedClasses domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x5f8c5fdd, 0x9a1c, 0x4502, 0x9d, 0x54, 0xc6, 0x7e, 0x23, 0x4d, 0x52, 0x3b);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ClassReferencesDerivedClasses link in the same Partition as the given Class
+		/// </summary>
+		/// <param name="source">Class to use as the source of the relationship.</param>
+		/// <param name="target">Class to use as the target of the relationship.</param>
+		internal ClassReferencesDerivedClasses(Class source, Class target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ClassReferencesDerivedClasses.SourceClassDomainRoleId, source), new DslModeling::RoleAssignment(ClassReferencesDerivedClasses.TargetClassDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ClassReferencesDerivedClasses(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ClassReferencesDerivedClasses(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ClassReferencesDerivedClasses(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ClassReferencesDerivedClasses(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region SourceClass domain role code
+		
+		/// <summary>
+		/// SourceClass domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SourceClassDomainRoleId = new global::System.Guid(0xcdd3d215, 0xc735, 0x4e70, 0x84, 0x32, 0x0a, 0xa6, 0x41, 0xe1, 0x9f, 0x6b);
+		
+		/// <summary>
+		/// DomainRole SourceClass
+		/// Description for CodeGeneration.DSL.ClassReferencesDerivedClasses.SourceClass
+		/// </summary>
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.ClassReferencesDerivedClasses/SourceClass.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.ClassReferencesDerivedClasses/SourceClass.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "DerivedClasses", PropertyDisplayNameKey="CodeGeneration.DSL.ClassReferencesDerivedClasses/SourceClass.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("cdd3d215-c735-4e70-8432-0aa641e19f6b")]
+		internal virtual Class SourceClass
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Class)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceClassDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceClassDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access BaseClass of a Class
+		/// <summary>
+		/// Gets BaseClass.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static Class GetBaseClass(Class element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, TargetClassDomainRoleId) as Class;
+		}
+		
+		/// <summary>
+		/// Sets BaseClass.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static void SetBaseClass(Class element, Class newSourceClass)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, TargetClassDomainRoleId, newSourceClass);
+		}
+		#endregion
+		#region TargetClass domain role code
+		
+		/// <summary>
+		/// TargetClass domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid TargetClassDomainRoleId = new global::System.Guid(0x526c18de, 0xe3e0, 0x4426, 0x8f, 0x71, 0x71, 0x69, 0xef, 0x2a, 0x62, 0x69);
+		
+		/// <summary>
+		/// DomainRole TargetClass
+		/// Description for CodeGeneration.DSL.ClassReferencesDerivedClasses.TargetClass
+		/// </summary>
+		[DslDesign::DisplayNameResource("CodeGeneration.DSL.ClassReferencesDerivedClasses/TargetClass.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("CodeGeneration.DSL.ClassReferencesDerivedClasses/TargetClass.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "BaseClass", PropertyDisplayNameKey="CodeGeneration.DSL.ClassReferencesDerivedClasses/TargetClass.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainObjectId("526c18de-e3e0-4426-8f71-7169ef2a6269")]
+		internal virtual Class TargetClass
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Class)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetClassDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetClassDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access DerivedClasses of a Class
+		/// <summary>
+		/// Gets a list of DerivedClasses.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static DslModeling::LinkedElementCollection<Class> GetDerivedClasses(Class element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Class>, Class>(element, SourceClassDomainRoleId);
+		}
+		#endregion
+		#region SourceClass link accessor
+		/// <summary>
+		/// Get the list of ClassReferencesDerivedClasses links to a Class.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.ClassReferencesDerivedClasses> GetLinksToDerivedClasses ( global::CodeGeneration.DSL.Class sourceClassInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassReferencesDerivedClasses>(sourceClassInstance, global::CodeGeneration.DSL.ClassReferencesDerivedClasses.SourceClassDomainRoleId);
+		}
+		#endregion
+		#region TargetClass link accessor
+		/// <summary>
+		/// Get the ClassReferencesDerivedClasses link to a Class.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static global::CodeGeneration.DSL.ClassReferencesDerivedClasses GetLinkToBaseClass (global::CodeGeneration.DSL.Class targetClassInstance)
+		{
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.ClassReferencesDerivedClasses> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassReferencesDerivedClasses>(targetClassInstance, global::CodeGeneration.DSL.ClassReferencesDerivedClasses.TargetClassDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of TargetClass not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region ClassReferencesDerivedClasses instance accessors
+		
+		/// <summary>
+		/// Get any ClassReferencesDerivedClasses links between a given Class and a Class.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static global::System.Collections.ObjectModel.ReadOnlyCollection<global::CodeGeneration.DSL.ClassReferencesDerivedClasses> GetLinks( global::CodeGeneration.DSL.Class source, global::CodeGeneration.DSL.Class target )
+		{
+			global::System.Collections.Generic.List<global::CodeGeneration.DSL.ClassReferencesDerivedClasses> outLinks = new global::System.Collections.Generic.List<global::CodeGeneration.DSL.ClassReferencesDerivedClasses>();
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.ClassReferencesDerivedClasses> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassReferencesDerivedClasses>(source, global::CodeGeneration.DSL.ClassReferencesDerivedClasses.SourceClassDomainRoleId);
+			foreach ( global::CodeGeneration.DSL.ClassReferencesDerivedClasses link in links )
+			{
+				if ( target.Equals(link.TargetClass) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ClassReferencesDerivedClasses link between a given Classand a Class.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		internal static global::CodeGeneration.DSL.ClassReferencesDerivedClasses GetLink( global::CodeGeneration.DSL.Class source, global::CodeGeneration.DSL.Class target )
+		{
+			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.ClassReferencesDerivedClasses> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassReferencesDerivedClasses>(source, global::CodeGeneration.DSL.ClassReferencesDerivedClasses.SourceClassDomainRoleId);
+			foreach ( global::CodeGeneration.DSL.ClassReferencesDerivedClasses link in links )
+			{
+				if ( target.Equals(link.TargetClass) )
 				{
 					return link;
 				}

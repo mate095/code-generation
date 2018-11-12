@@ -1,9 +1,9 @@
-﻿using CodeGeneration.DSL;
-using Microsoft.VisualStudio.Modeling;
-using System;
-
-namespace CodeGeneration.TestDataCreator
+﻿namespace CodeGeneration.TestDataCreator
 {
+    using CodeGeneration.DSL;
+    using Microsoft.VisualStudio.Modeling;
+    using System;
+
     /// <summary>
     /// Class for creat test data for code generation
     /// </summary>
@@ -11,32 +11,69 @@ namespace CodeGeneration.TestDataCreator
     {
         Store store;
 
-        public IWorld CreatWorld()
+        public IMetaModel CreatMetaModel()
         {
             store = new Store(typeof(DSLDomainModel));
-            World world;
-            using (Transaction t = store.TransactionManager.BeginTransaction("Create test model"))
+            MetaModel metaModel;
+            using (Transaction t = store.TransactionManager.BeginTransaction("Create test meta model"))
             {
-                world = new World(store);
-                Predator predator = new Predator(store);
-                predator.Name = "Tiger";
-                predator.NumberOfLegs = 4;
-                predator.AnimalId = 1;
+                metaModel = new MetaModel(store);
 
-                Animal prey = new Animal(store);
-                prey.Name = "Buffallo";
-                prey.NumberOfLegs = 4;
-                prey.AnimalId = 2;
-                
-                predator.Preys.Add(prey);
+                Property nameProperty = new Property(store)
+                {
+                    Name = "Name",
+                    Type = "string",
+                    IsReadOnly = true
+                    
+                };
 
-                world.Animals.Add(predator);
-                world.Animals.Add(prey);
+                Property ageProperty = new Property(store)
+                {
+                    Name = "Age",
+                    Type = "int"
+                };
+
+                Class personClass = new Class(store)
+                {
+                    Name = "Person",
+                };
+
+                personClass.Properties.Add(nameProperty);
+                personClass.Properties.Add(ageProperty);
+
+                Class studentClass = new Class(store)
+                {
+                    Name = "Student",
+                    BaseClass = personClass
+                };
+
+                Property neptunProperty = new Property(store)
+                {
+                    Name = "NeptunCode",
+                    Type = "string",
+                    IsReadOnly = true
+
+                };
+
+                Property kreditProperty = new Property(store)
+                {
+                    Name = "Kredits",
+                    Type = "int",
+                    DefaultValue = "0"
+                };
+
+                studentClass.Properties.Add(neptunProperty);
+                studentClass.Properties.Add(kreditProperty);
+
+                personClass.DerivedClasses.Add(studentClass);
+
+                metaModel.Classes.Add(personClass);
+                metaModel.Classes.Add(studentClass);
 
                 t.Commit();
             }
 
-            return world;
+            return metaModel;
         }
 
         public void Dispose()

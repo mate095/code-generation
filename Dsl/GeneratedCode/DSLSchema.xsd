@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema id="DSLSchema" targetNamespace="http://schemas.microsoft.com/dsltools/DSL" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/DSL" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
-  <!-- World -->
-  <xsd:element name="world" type="World" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="World">
+  <!-- MetaModel -->
+  <xsd:element name="metaModel" type="MetaModel" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="MetaModel">
     <xsd:annotation>
       <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: WorldHasAnimals -->
-          <xsd:element name="animals" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: MetaModelHasClasses -->
+          <xsd:element name="classes" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of WorldHasAnimals</xsd:documentation>
+              <xsd:documentation>Instances of MetaModelHasClasses</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
                 <xsd:choice minOccurs="0" maxOccurs="unbounded" >
-                  <xsd:element ref="worldHasAnimals">
+                  <xsd:element ref="metaModelHasClasses">
                     <xsd:annotation>
-                      <xsd:documentation>[Relationship deriving from WorldHasAnimals needs to be serialized in full-form]</xsd:documentation>
+                      <xsd:documentation>[Relationship deriving from MetaModelHasClasses needs to be serialized in full-form]</xsd:documentation>
                     </xsd:annotation>
                   </xsd:element>
-                  <xsd:element ref="animal" >
+                  <xsd:element ref="class" >
                     <xsd:annotation>
                       <xsd:documentation>[Target role-player]</xsd:documentation>
                     </xsd:annotation>
@@ -49,11 +49,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- World Moniker -->
-  <xsd:element name="worldMoniker" type="WorldMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="WorldMoniker">
+  <!-- MetaModel Moniker -->
+  <xsd:element name="metaModelMoniker" type="MetaModelMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MetaModelMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for World instance.</xsd:documentation>
+      <xsd:documentation>Moniker for MetaModel instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -66,63 +66,40 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- Animal -->
-  <xsd:element name="animal" type="Animal" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="Animal">
+  <!-- Class -->
+  <xsd:element name="class" type="Class" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Class">
     <xsd:annotation>
       <xsd:documentation>Elements embedded in the model. Appear as boxes on the diagram.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" use="required" />
-        <!-- Property: NumberOfLegs -->
-        <xsd:attribute name="numberOfLegs" type="xsd:integer" />
-        <!-- Property: AnimalId -->
-        <xsd:attribute name="animalId" type="xsd:integer" />
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- Animal Moniker -->
-  <xsd:element name="animalMoniker" type="AnimalMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="AnimalMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for Animal instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="name" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- Predator -->
-  <xsd:element name="predator" type="Predator" substitutionGroup="animal" />
-  <xsd:complexType name="Predator">
-    <xsd:complexContent>
-      <xsd:extension base="Animal">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: PredatorReferencesPreys -->
-          <xsd:element name="preys" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ClassHasProperties -->
+          <xsd:element name="properties" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of PredatorReferencesPreys</xsd:documentation>
+              <xsd:documentation>Instances of ClassHasProperties</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="predatorReferencesPreys" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="classHasProperties" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of PredatorReferencesPreys needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of ClassHasProperties needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: ClassReferencesDerivedClasses -->
+          <xsd:element name="derivedClasses" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ClassReferencesDerivedClasses</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="classReferencesDerivedClasses" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ClassReferencesDerivedClasses needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -135,53 +112,57 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" use="required" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- Predator Moniker -->
-  <xsd:element name="predatorMoniker" type="PredatorMoniker" substitutionGroup="animalMoniker" />
-  <xsd:complexType name="PredatorMoniker">
+  <!-- Class Moniker -->
+  <xsd:element name="classMoniker" type="ClassMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ClassMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for Predator instance.</xsd:documentation>
+      <xsd:documentation>Moniker for Class instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="AnimalMoniker">
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- WorldHasAnimals -->
-  <xsd:element name="worldHasAnimals" abstract="true" type="WorldHasAnimals" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="WorldHasAnimals" abstract="true" >
-    <xsd:annotation>
-      <xsd:documentation>Embedding relationship between the Model and Elements</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end Animal -->
-          <xsd:element ref="animal" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="name" type="xsd:string" >
           <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- WorldHasAnimals Moniker -->
-  <xsd:element name="worldHasAnimalsMoniker" type="WorldHasAnimalsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="WorldHasAnimalsMoniker">
+  <!-- Property -->
+  <xsd:element name="property" type="Property" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Property">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" />
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="xsd:string" />
+        <!-- Property: IsReadOnly -->
+        <xsd:attribute name="isReadOnly" type="xsd:boolean" />
+        <!-- Property: DefaultValue -->
+        <xsd:attribute name="defaultValue" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Property Moniker -->
+  <xsd:element name="propertyMoniker" type="PropertyMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="PropertyMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for WorldHasAnimals instance.</xsd:documentation>
+      <xsd:documentation>Moniker for Property instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -194,14 +175,17 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- PredatorReferencesPreys -->
-  <xsd:element name="predatorReferencesPreys" type="PredatorReferencesPreys" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="PredatorReferencesPreys">
+  <!-- MetaModelHasClasses -->
+  <xsd:element name="metaModelHasClasses" abstract="true" type="MetaModelHasClasses" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="MetaModelHasClasses" abstract="true" >
+    <xsd:annotation>
+      <xsd:documentation>Embedding relationship between the Model and Elements</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end Animal -->
-          <xsd:element ref="animalMoniker" minOccurs="1" maxOccurs="1">
+          <!-- Target end Class -->
+          <xsd:element ref="class" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -217,11 +201,91 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- PredatorReferencesPreys Moniker -->
-  <xsd:element name="predatorReferencesPreysMoniker" type="PredatorReferencesPreysMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="PredatorReferencesPreysMoniker">
+  <!-- MetaModelHasClasses Moniker -->
+  <xsd:element name="metaModelHasClassesMoniker" type="MetaModelHasClassesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MetaModelHasClassesMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for PredatorReferencesPreys instance.</xsd:documentation>
+      <xsd:documentation>Moniker for MetaModelHasClasses instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassHasProperties -->
+  <xsd:element name="classHasProperties" type="ClassHasProperties" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ClassHasProperties">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Property -->
+          <xsd:element ref="property" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassHasProperties Moniker -->
+  <xsd:element name="classHasPropertiesMoniker" type="ClassHasPropertiesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ClassHasPropertiesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClassHasProperties instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassReferencesDerivedClasses -->
+  <xsd:element name="classReferencesDerivedClasses" type="ClassReferencesDerivedClasses" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ClassReferencesDerivedClasses">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Class -->
+          <xsd:element ref="classMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassReferencesDerivedClasses Moniker -->
+  <xsd:element name="classReferencesDerivedClassesMoniker" type="ClassReferencesDerivedClassesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ClassReferencesDerivedClassesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClassReferencesDerivedClasses instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
