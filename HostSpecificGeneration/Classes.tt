@@ -1,0 +1,46 @@
+﻿<#@ template language="C#" hostSpecific="true" debug="true" #>
+<#@ output extension=".txt4" #>
+<#@ include file="TemplateFileManagerV2.1.ttinclude" #>
+<#@ include file="Common\\Imports.ttinclude"#>
+<#
+var collector = new ClassTemplateDataCollector();
+var classTemplates = collector.ClassTemplates;
+
+var fileManager = TemplateFileManager.Create(this);
+
+foreach(var classTemplate in classTemplates)
+{
+    var fileName = classTemplate.Name + ".cs";
+    fileManager.StartNewFile(fileName, "GenerationResult",  "_Generated\\T4\\HostSpecific");
+#>
+<#@ include file="Common\\HeaderComment.ttinclude"#>
+
+namespace CodeGeneration.GenerationResult.T4.HostSpecific
+{
+    internal partial class <#= classTemplate.Name #> :
+<# if(classTemplate.HasBase)
+{
+#>
+        <#= classTemplate.BaseClassName #>,
+<#
+    }
+#>
+        <#= classTemplate.InterfaceName #>
+    {
+<#@ include file="Implementation\\ClassFields.ttinclude"#>
+
+<#@ include file="Implementation\\ClassConstructor.ttinclude"#>
+
+<#@ include file="Implementation\\ClassReadOnlyProperties.ttinclude"#>
+
+<#@ include file="Implementation\\ClassPropertiesWithSetter.ttinclude"#>
+    }
+}
+<#
+}
+#>
+
+<#
+fileManager.Process();
+WriteLineToBuildPane("Classes.tt generation was successful");
+#>

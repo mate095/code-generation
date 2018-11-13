@@ -1,5 +1,7 @@
 ﻿<#@ assembly name="System.Core" #>
 <#@ assembly name="$(OutputPath)CodeGeneration.DSL.Dsl.dll" #>
 <#@ assembly name="$(OutputPath)CodeGeneration.TestDataCreator.dll" #>
+<#@ assembly name="$(OutputPath)CodeGeneration.Generator.Logic.dll" #>
 <#@ import namespace="CodeGeneration.DSL" #>
 <#@ import namespace="CodeGeneration.TestDataCreator" #>
+<#@ import namespace="CodeGeneration.Generator.Logic" #>

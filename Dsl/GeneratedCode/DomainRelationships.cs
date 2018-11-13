@@ -351,23 +351,23 @@ namespace CodeGeneration.DSL
 		}
 				
 		#endregion
-		#region Static methods to access Class of a Property
+		#region Static methods to access Classes of a Property
 		/// <summary>
-		/// Gets Class.
+		/// Gets Classes.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static Class GetClass(Property element)
+		internal static Class GetClasses(Property element)
 		{
 			return DslModeling::DomainRoleInfo.GetLinkedElement(element, PropertyDomainRoleId) as Class;
 		}
 		
 		/// <summary>
-		/// Sets Class.
+		/// Sets Classes.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static void SetClass(Property element, Class newClass)
+		internal static void SetClasses(Property element, Class newClass)
 		{
 			DslModeling::DomainRoleInfo.SetLinkedElement(element, PropertyDomainRoleId, newClass);
 		}
@@ -385,7 +385,7 @@ namespace CodeGeneration.DSL
 		/// </summary>
 		[DslDesign::DisplayNameResource("CodeGeneration.DSL.ClassHasProperties/Property.DisplayName", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("CodeGeneration.DSL.ClassHasProperties/Property.Description", typeof(global::CodeGeneration.DSL.DSLDomainModel), "CodeGeneration.DSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Class", PropertyDisplayNameKey="CodeGeneration.DSL.ClassHasProperties/Property.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Classes", PropertyDisplayNameKey="CodeGeneration.DSL.ClassHasProperties/Property.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
 		[DslModeling::DomainObjectId("c033081f-5eb4-4ed5-80da-ffac2245f43c")]
 		internal virtual Property Property
 		{
@@ -430,7 +430,7 @@ namespace CodeGeneration.DSL
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		internal static global::CodeGeneration.DSL.ClassHasProperties GetLinkToClass (global::CodeGeneration.DSL.Property propertyInstance)
+		internal static global::CodeGeneration.DSL.ClassHasProperties GetLinkToClasses (global::CodeGeneration.DSL.Property propertyInstance)
 		{
 			global::System.Collections.Generic.IList<global::CodeGeneration.DSL.ClassHasProperties> links = DslModeling::DomainRoleInfo.GetElementLinks<global::CodeGeneration.DSL.ClassHasProperties>(propertyInstance, global::CodeGeneration.DSL.ClassHasProperties.PropertyDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Property not obeyed.");

@@ -9,26 +9,30 @@
 
 namespace CodeGeneration.GenerationResult.T4.HostSpecific
 {
-
-    using System.Collections.Generic;
-
-    public class Tiger
+    internal partial class Person :
+        IPerson
     {
-        private IEnumerable<int> preyIds;
+        private int age;
 
-        public Tiger(string name)
+        public Person(
+            string name)
         {
             Name = name;
         }
 
-        public string Name {get; set;}
+        public string Name { get; }
 
-        public int NumberOfLegs => 4;
-
-        public IEnumerable<int> PreyIds => preyIds ?? (preyIds = new List<int>
+        public int Age
         {
-           2,
-        });
+            get
+            {
+                return age;
+            }
+
+            set
+            {
+                age = value;
+            }
+        }
     }
 }
-

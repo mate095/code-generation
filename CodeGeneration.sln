@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Roslyn", "_Roslyn", "{D682
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynGenerator", "RoslynGenerator\RoslynGenerator.csproj", "{61305FEC-8DD1-410C-8B66-0A8E9D9036AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator.Logic", "Generator.Logic\Generator.Logic.csproj", "{7D7422AD-40B7-47DF-A404-0575D2EAF467}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,10 @@ Global
 		{61305FEC-8DD1-410C-8B66-0A8E9D9036AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61305FEC-8DD1-410C-8B66-0A8E9D9036AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61305FEC-8DD1-410C-8B66-0A8E9D9036AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7422AD-40B7-47DF-A404-0575D2EAF467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7422AD-40B7-47DF-A404-0575D2EAF467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7422AD-40B7-47DF-A404-0575D2EAF467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7422AD-40B7-47DF-A404-0575D2EAF467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +97,7 @@ Global
 		{BA37D822-8BCA-4E4E-9DE9-C2E6734FCA4A} = {4BB35DDF-7662-40E8-A25C-3D3997D48252}
 		{D682D16F-B442-4988-A9ED-DDBCB2BD7124} = {070D9F83-33B3-4ACA-8ACA-754D4397DE3C}
 		{61305FEC-8DD1-410C-8B66-0A8E9D9036AA} = {D682D16F-B442-4988-A9ED-DDBCB2BD7124}
+		{7D7422AD-40B7-47DF-A404-0575D2EAF467} = {070D9F83-33B3-4ACA-8ACA-754D4397DE3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF306D2C-12DF-45AC-8722-BC3D69C76246}

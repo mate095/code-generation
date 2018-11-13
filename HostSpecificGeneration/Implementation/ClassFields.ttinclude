@@ -1,0 +1,8 @@
+﻿<#
+    foreach(var propertyTemplate in classTemplate.PropertiesWithSetter)
+    {
+#>
+        private <#= propertyTemplate.Type #> <#= propertyTemplate.NameStartWithLowerCase #>;
+<#
+    }
+#>

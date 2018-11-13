@@ -84,7 +84,7 @@
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="c033081f-5eb4-4ed5-80da-ffac2245f43c" Description="Description for CodeGeneration.DSL.ClassHasProperties.Property" Name="Property" DisplayName="Property" PropertyName="Class" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Class">
+        <DomainRole Id="c033081f-5eb4-4ed5-80da-ffac2245f43c" Description="Description for CodeGeneration.DSL.ClassHasProperties.Property" Name="Property" DisplayName="Property" PropertyName="Classes" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Classes">
           <RolePlayer>
             <DomainClassMoniker Name="Property" />
           </RolePlayer>

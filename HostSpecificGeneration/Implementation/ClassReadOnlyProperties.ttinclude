@@ -1,0 +1,16 @@
+﻿<# 
+    foreach(var propertyTemplate in classTemplate.ReadOnlyPropertiesWithDefaultValue)
+    {
+#>
+        public <#= propertyTemplate.Type #> <#= propertyTemplate.Name #> => <#= propertyTemplate.DefaultValue #>;
+<#
+    }
+#>
+<# 
+    foreach(var propertyTemplate in classTemplate.ReadOnlyPropertiesWithOutDefaultValue)
+    {
+#>
+        public <#= propertyTemplate.Type #> <#= propertyTemplate.Name #> { get; }
+<#
+    }
+#>

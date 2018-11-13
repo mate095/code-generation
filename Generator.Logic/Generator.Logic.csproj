@@ -4,11 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D4028FA6-674A-4AAA-8D82-BC4BAF087289}</ProjectGuid>
+    <ProjectGuid>{7D7422AD-40B7-47DF-A404-0575D2EAF467}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HostSpecificGeneration</RootNamespace>
-    <AssemblyName>HostSpecificGeneration</AssemblyName>
+    <RootNamespace>CodeGeneration.Generator.Logic</RootNamespace>
+    <AssemblyName>CodeGeneration.Generator.Logic</AssemblyName>
+    <AssemblyName>CodeGeneration.Generator.Logic</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <SignAssembly>true</SignAssembly>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -25,7 +29,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>$(SolutionDir)bin\Release\</OutputPath>
+    <OutputPath>$(SolutionDir)\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -41,39 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfaceTemplateData.cs" />
+    <Compile Include="ClassTemplateData.cs" />
+    <Compile Include="ClassTemplateDataCollector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyTemplateData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Classes.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Classes.txt4</LastGenOutput>
-    </Content>
-    <Content Include="Interfaces.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Interfaces.txt4</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Classes.txt4">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Classes.tt</DependentUpon>
-    </None>
-    <None Include="Common\HeaderComment.ttinclude" />
-    <None Include="Common\Imports.ttinclude" />
-    <None Include="Implementation\ClassConstructor.ttinclude" />
-    <None Include="Implementation\ClassFields.ttinclude" />
-    <None Include="Implementation\ClassPropertiesWithSetter.ttinclude" />
-    <None Include="Implementation\ClassReadOnlyProperties.ttinclude" />
-    <None Include="Interfaces.txt4">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Interfaces.tt</DependentUpon>
-    </None>
-    <None Include="TemplateFileManagerV2.1.ttinclude" />
+    <ProjectReference Include="..\Dsl\Dsl.csproj">
+      <Project>{8C66FFB4-D98C-4072-B797-DD31AD86D5DA}</Project>
+      <Name>Dsl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestDataCreator\TestDataCreator.csproj">
+      <Project>{66ECBE1D-89C5-45C7-8BE3-467D2998F578}</Project>
+      <Name>TestDataCreator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

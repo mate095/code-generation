@@ -9,16 +9,16 @@
 
 namespace CodeGeneration.GenerationResult.T4.HostSpecific
 {
-    public class Buffallo
+    public interface IStudent
     {
-        public Buffallo(string name)
-        {
-            Name = name;
-        }
 
-        public string Name {get; set;}
+        string NeptunCode { get; }
 
-        public int NumberOfLegs => 4;
+        int Kredits { get; set;}
+
+        string Name { get; }
+
+        int Age { get; set;}
     }
 }
 

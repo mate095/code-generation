@@ -840,12 +840,12 @@ namespace CodeGeneration.DSL
 		}
 		
 		#endregion
-		#region Class opposite domain role accessor
+		#region Classes opposite domain role accessor
 		/// <summary>
-		/// Gets or sets Class.
+		/// Gets or sets Classes.
 		/// Description for CodeGeneration.DSL.ClassHasProperties.Property
 		/// </summary>
-		internal virtual Class Class
+		internal virtual Class Classes
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get

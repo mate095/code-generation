@@ -1,0 +1,53 @@
+﻿        public <#= classTemplate.Name #>(
+<#
+    foreach(var propertyTemplate in classTemplate.ConstructorParamters)
+    {
+        if(propertyTemplate.NameStartWithLowerCase.Equals(classTemplate.ConstructorParamters.Last().NameStartWithLowerCase))
+        {
+#>
+            <#= propertyTemplate.Type #> <#= propertyTemplate.NameStartWithLowerCase #>)
+<#
+        }
+        else
+        {
+#>
+<#
+#>          <#= propertyTemplate.Type #> <#= propertyTemplate.NameStartWithLowerCase #>,
+<#
+        }
+    }
+#>
+<#
+if (classTemplate.HasBase)
+{
+#>
+           : base(
+<#
+     foreach(var propertyTemplate in classTemplate.BeseReadOnlyPropertiesWithOutDefaultValue)
+     {
+        if(propertyTemplate.NameStartWithLowerCase.Equals(classTemplate.BeseReadOnlyPropertiesWithOutDefaultValue.Last().NameStartWithLowerCase))
+        {
+#>
+                <#= propertyTemplate.NameStartWithLowerCase #>)
+<#
+        }
+        else
+        {
+#>
+<#
+#>          <#= propertyTemplate.NameStartWithLowerCase #>,
+<#
+        }
+    }
+}
+#>
+        {
+<#
+    foreach(var propertyTemplate in classTemplate.ReadOnlyPropertiesWithOutDefaultValue)
+    {
+#>
+            <#= propertyTemplate.Name #> = <#= propertyTemplate.NameStartWithLowerCase #>;
+<#
+    }
+#>
+        }

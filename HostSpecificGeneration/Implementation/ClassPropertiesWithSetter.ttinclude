@@ -1,0 +1,19 @@
+﻿<#
+    foreach(var propetyTemplate in classTemplate.PropertiesWithSetter)
+    {
+#>
+        public <#= propetyTemplate.Type #> <#= propetyTemplate.Name #>
+        {
+            get
+            {
+                return <#= propetyTemplate.NameStartWithLowerCase #>;
+            }
+
+            set
+            {
+                <#= propetyTemplate.NameStartWithLowerCase #> = value;
+            }
+        }
+<#
+}
+#>

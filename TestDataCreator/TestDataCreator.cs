@@ -32,6 +32,7 @@
                     Name = "Age",
                     Type = "int"
                 };
+                
 
                 Class personClass = new Class(store)
                 {
@@ -64,8 +65,6 @@
 
                 studentClass.Properties.Add(neptunProperty);
                 studentClass.Properties.Add(kreditProperty);
-
-                personClass.DerivedClasses.Add(studentClass);
 
                 metaModel.Classes.Add(personClass);
                 metaModel.Classes.Add(studentClass);

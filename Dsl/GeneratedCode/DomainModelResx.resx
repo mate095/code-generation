@@ -250,7 +250,7 @@
     <comment>DisplayName for DomainRole &apos;Property&apos; on DomainRelationship &apos;ClassHasProperties&apos;</comment>
   </data>
   <data name="CodeGeneration.DSL.ClassHasProperties/Property.PropertyDisplayName" xml:space="preserve">
-    <value>Class</value>
+    <value>Classes</value>
     <comment>PropertyDisplayName for DomainRole &apos;Property&apos; on DomainRelationship &apos;ClassHasProperties&apos;</comment>
   </data>
   <data name="CodeGeneration.DSL.ClassReferencesDerivedClasses.Description" xml:space="preserve">

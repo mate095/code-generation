@@ -1,0 +1,40 @@
+﻿<#@ template language="C#" hostSpecific="true" debug="true" #>
+<#@ output extension=".txt4" #>
+<#@ include file="TemplateFileManagerV2.1.ttinclude" #>
+<#@ include file="Common\\Imports.ttinclude"#>
+<#
+var collector = new ClassTemplateDataCollector();
+var interfaceTemplates = collector.InterfaceTemplates;
+
+var fileManager = TemplateFileManager.Create(this);
+
+foreach(var interfaceTemplate in interfaceTemplates)
+{
+    var fileName = interfaceTemplate.Name + ".cs";
+    fileManager.StartNewFile(fileName, "GenerationResult",  "_Generated\\T4\\HostSpecific");
+#>
+<#@ include file="Common\\HeaderComment.ttinclude"#>
+
+namespace CodeGeneration.GenerationResult.T4.HostSpecific
+{
+    public interface <#= interfaceTemplate.Name #>
+    {
+<#
+    foreach(var propertyTemplate in interfaceTemplate.Properties)
+    {
+#>
+
+        <#= propertyTemplate.Type #> <#= propertyTemplate.Name #> { get; <# if(!propertyTemplate.IsReadOnly){#>set;<#}#>}
+<#
+    }
+#>
+    }
+}
+<#
+}
+#>
+
+<#
+fileManager.Process();
+WriteLineToBuildPane("Interfaces.tt generation was successful");
+#>
