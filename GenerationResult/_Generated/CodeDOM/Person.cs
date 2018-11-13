@@ -12,7 +12,7 @@ namespace CodeGeneration.GenerationResult.CodeDOM
 {
     
     
-    public class Person : IPerson
+    public partial class Person : IPerson
     {
         
         private int age;

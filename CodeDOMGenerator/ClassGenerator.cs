@@ -55,6 +55,8 @@
         private void InitClass()
         {
             targetClass = new CodeTypeDeclaration(classTemplate.Name);
+            targetClass.IsPartial = true;
+            targetClass.Attributes = MemberAttributes.Private;
             codeNamespace = new CodeNamespace("CodeGeneration.GenerationResult.CodeDOM");
             if (classTemplate.HasBase)
             {

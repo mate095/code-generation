@@ -12,7 +12,7 @@ namespace CodeGeneration.GenerationResult.CodeDOM
 {
     
     
-    public class Student : Person, IStudent
+    public partial class Student : Person, IStudent
     {
         
         private int kredits;
