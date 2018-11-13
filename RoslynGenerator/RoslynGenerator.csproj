@@ -214,7 +214,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimalGenerator.cs" />
+    <Compile Include="ClassGenerator.cs" />
+    <Compile Include="GeneratorBase.cs" />
+    <Compile Include="InterfaceGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -230,6 +232,10 @@
     <ProjectReference Include="..\Dsl\Dsl.csproj">
       <Project>{8C66FFB4-D98C-4072-B797-DD31AD86D5DA}</Project>
       <Name>Dsl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Generator.Logic\Generator.Logic.csproj">
+      <Project>{7D7422AD-40B7-47DF-A404-0575D2EAF467}</Project>
+      <Name>Generator.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestDataCreator\TestDataCreator.csproj">
       <Project>{66ECBE1D-89C5-45C7-8BE3-467D2998F578}</Project>

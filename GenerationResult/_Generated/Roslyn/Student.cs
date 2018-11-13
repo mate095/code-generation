@@ -8,19 +8,30 @@
 //------------------------------------------------------------------------------
 namespace CodeGeneration.GenerationResult.Roslyn
 {
-    public class Buffallo
+    internal partial class Student : Person, IStudent
     {
-        public Buffallo(string name)
+        private int kredits;
+        public Student(string neptunCode, string name): base(name)
         {
-            Name = name;
+            NeptunCode = neptunCode;
         }
 
-        public string Name
+        public string NeptunCode
         {
             get;
-            set;
         }
 
-        public int NumberOfLegs => 4;
+        public int Kredits
+        {
+            get
+            {
+                return kredits;
+            }
+
+            set
+            {
+                kredits = value;
+            }
+        }
     }
 }

@@ -1,23 +1,29 @@
 namespace CodeGeneratin.RoslynGenerator
 {
+    using CodeGeneration.Generator.Logic;
     using System;
-    using CodeGeneration.TestDataCreator;
 
     class Program
     {
         public static void Main(string[] args)
         {
+            var collector = new ClassTemplateDataCollector();
+            var classTemplates = collector.ClassTemplates;
+            var interfaceTemplates = collector.InterfaceTemplates;
 
-            var creator = new TestDataCreator();
-            var world = creator.CreatWorld();
-            
 
-            foreach(var animal in world.Animals)
+            foreach (var classTemplate in classTemplates)
             {
-                AnimalGenerator generator = new AnimalGenerator(animal);
-                generator.CreateAnimal();
+                ClassGenerator generator = new ClassGenerator(classTemplate);
+                generator.CreateClass();
             }
-            
+
+            foreach (var interfaceTemplate in interfaceTemplates)
+            {
+                InterfaceGenerator generator = new InterfaceGenerator(interfaceTemplate);
+                generator.CreateInterface();
+            }
+
             // Wait to exit.
             Console.Read();
         }

@@ -8,23 +8,28 @@
 //------------------------------------------------------------------------------
 namespace CodeGeneration.GenerationResult.Roslyn
 {
-    using System.Collections.Generic;
-
-    public class Tiger
+    public interface IStudent
     {
-        private IEnumerable<int> preyIds;
-        public Tiger(string name)
+        string NeptunCode
         {
-            Name = name;
+            get;
         }
 
-        public string Name
+        int Kredits
         {
             get;
             set;
         }
 
-        public int NumberOfLegs => 4;
-        public IEnumerable<int> Preys => preyIds ?? (preyIds = new List<int>{2});
+        string Name
+        {
+            get;
+        }
+
+        int Age
+        {
+            get;
+            set;
+        }
     }
 }

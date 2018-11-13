@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_Generated\Roslyn\Buffallo.cs" />
-    <Compile Include="_Generated\Roslyn\Tiger.cs" />
+    <Compile Include="_Generated\Roslyn\IPerson.cs" />
+    <Compile Include="_Generated\Roslyn\IStudent.cs" />
+    <Compile Include="_Generated\Roslyn\Person.cs" />
+    <Compile Include="_Generated\Roslyn\Student.cs" />
     <Compile Include="_Generated\T4\HostSpecific\IPerson.cs">
       <DependentUpon>Interfaces.txt4</DependentUpon>
     </Compile>
