@@ -10,44 +10,35 @@
 
 namespace CodeGeneration.GenerationResult.CodeDOM
 {
-    using System.Collections.Generic;
     
     
-    public class Tiger
+    public class Student : Person, IStudent
     {
         
-        private System.Collections.Generic.IEnumerable<int> preyIds = new int[] {
-                2};
+        private int kredits;
         
-        public Tiger(string name)
+        public Student(string neptunCode, string name) : 
+                base(name)
         {
-            Name = names;
+            NeptunCode = neptunCode;
         }
         
-        // Name of the animal
-        public virtual string Name
+        public virtual string NeptunCode
         {
             get
             {
+            }
+        }
+        
+        public virtual int Kredits
+        {
+            get
+            {
+                return this.kredits;
             }
             set
             {
-            }
-        }
-        
-        public virtual void NumberOfLegs
-        {
-            get
-            {
-                return 4;
-            }
-        }
-        
-        public virtual void PreyIds
-        {
-            get
-            {
-                return this.preyIds;
+                this.kredits = value;
             }
         }
     }

@@ -51,7 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimalGenerator.cs" />
+    <Compile Include="ClassGenerator.cs" />
+    <Compile Include="InterfaceGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +64,10 @@
     <ProjectReference Include="..\Dsl\Dsl.csproj">
       <Project>{8c66ffb4-d98c-4072-b797-dd31ad86d5da}</Project>
       <Name>Dsl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Generator.Logic\Generator.Logic.csproj">
+      <Project>{7D7422AD-40B7-47DF-A404-0575D2EAF467}</Project>
+      <Name>Generator.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestDataCreator\TestDataCreator.csproj">
       <Project>{66ecbe1d-89c5-45c7-8be3-467d2998f578}</Project>

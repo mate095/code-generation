@@ -1,19 +1,28 @@
 namespace CodeGeneration.CodeDOMGenerator
 {
     using System.CodeDom;
-    using CodeGeneration.TestDataCreator;
+    using CodeGeneration.Generator.Logic;
 
     class Program
     {
         static void Main(string[] args)
         {
-            var creator = new TestDataCreator();
-            var world = creator.CreatWorld();
+            var collector = new ClassTemplateDataCollector();
+            var classTemplates = collector.ClassTemplates;
+            var interfaceTemplates = collector.InterfaceTemplates;
 
-            foreach(var animal in world.Animals)
+
+            foreach (var classTemplate in classTemplates)
             {
-                AnimalGenerator generator = new AnimalGenerator(animal, new CodeCompileUnit());
-                string outputPath = $"..\\..\\GenerationResult\\_Generated\\CodeDOM\\{animal.Name}.cs";
+                ClassGenerator generator = new ClassGenerator(classTemplate, new CodeCompileUnit());
+                string outputPath = $"..\\..\\GenerationResult\\_Generated\\CodeDOM\\{classTemplate.Name}.cs";
+                generator.GenerateCSharpCode(outputPath);
+            }
+
+            foreach (var interfaceTemplate in interfaceTemplates)
+            {
+                InterfaceGenerator generator = new InterfaceGenerator(interfaceTemplate, new CodeCompileUnit());
+                string outputPath = $"..\\..\\GenerationResult\\_Generated\\CodeDOM\\{interfaceTemplate.Name}.cs";
                 generator.GenerateCSharpCode(outputPath);
             }
         }

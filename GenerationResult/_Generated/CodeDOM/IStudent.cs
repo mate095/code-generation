@@ -12,31 +12,29 @@ namespace CodeGeneration.GenerationResult.CodeDOM
 {
     
     
-    public class Buffallo
+    public interface IStudent
     {
         
-        public Buffallo(string name)
+        string NeptunCode
         {
-            Name = names;
+            get;
         }
         
-        // Name of the animal
-        public virtual string Name
+        int Kredits
         {
-            get
-            {
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
         
-        public virtual void NumberOfLegs
+        string Name
         {
-            get
-            {
-                return 4;
-            }
+            get;
+        }
+        
+        int Age
+        {
+            get;
+            set;
         }
     }
 }
